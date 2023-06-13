@@ -52,9 +52,7 @@ function Reviews() {
         <div>
           <div className="container">
             <div className="row justify-content-center">
-              <Header className="col-6">
-                Encore hésitant ? Découvrez ce que nos clients pensent de nous !
-              </Header>
+              <Header className="col-6">Ils nous ont fait confiance...</Header>
             </div>
 
             <Slider {...settings}>

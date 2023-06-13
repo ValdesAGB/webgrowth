@@ -38,12 +38,12 @@ function FAQ() {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 24px;
-    margin: 7% 0 5% 0;
+    margin: 7% 0 7% 0;
   `
 
   return (
     <React.Fragment>
-      <section>
+      <FAQSection>
         <div className="container">
           <div className="row justify-content-center text-center">
             <div className="col-6">
@@ -78,11 +78,14 @@ function FAQ() {
             </div>
           </div>
         </div>
-      </section>
+      </FAQSection>
     </React.Fragment>
   )
 }
 
+const FAQSection = styled.section`
+  margin: 5% 0 2% 0;
+`
 const DivAll = styled.div`
   position: relative;
 `
@@ -113,7 +116,7 @@ const AnswerContainer = styled.div`
   position: relative;
   top: -20px;
   z-index: -1;
-  background-color: #ffce07;
+  background-color: #cccccb;
   text-align: justify;
   opacity: ${(props) => (props.active ? 1 : 0)};
   max-height: ${(props) => (props.active ? '1000px' : '0')};
@@ -125,6 +128,7 @@ const AnswerContainer = styled.div`
 `
 
 const Answer = styled.div`
+  font-family: 'Roboto', sans-serif;
   margin-top: 5px;
   margin-bottom: 6%;
 `

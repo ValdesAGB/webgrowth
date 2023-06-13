@@ -32,10 +32,24 @@ function Achievements() {
     right: 0;
     bottom: 0;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 
     ${GridElements}:hover & {
       background-color: rgba(0, 0, 0, 0.4);
+      opacity: 1;
+      transform: translateX(0%);
     }
+  `
+
+  const Paragraph = styled.p`
+    color: white;
+    text-align: justify;
+    padding: 0 10% 0 10%;
   `
   return (
     <React.Fragment>
@@ -43,7 +57,16 @@ function Achievements() {
         {archivementsElements.map(({ id, cover }) => (
           <GridElements ids={id} key={id} className=" align-items-center">
             <img src={cover} alt={id} className="w-100" />
-            <Hover />
+            <Hover>
+              <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+              </Paragraph>
+            </Hover>
           </GridElements>
         ))}
       </Grid>

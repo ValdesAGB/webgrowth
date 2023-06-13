@@ -19,6 +19,15 @@ function Why() {
     font-weigth: bold;
     font-size: 22px;
     margin-bottom: 10%;
+    border-radius: 20px;
+    color: white;
+    background-color: #121234;
+    padding: 5%;
+    transition: background-color 500ms, color 800ms;
+    ${WhySection}:hover & {
+      background-color: white;
+      color: black;
+    }
   `
 
   const Paragraph = styled.p`

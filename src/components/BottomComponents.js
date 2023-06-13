@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 
 function BottomComponents() {
   const Header = styled.h1`
@@ -15,21 +16,6 @@ function BottomComponents() {
     font-size: 18px;
     margin: 1% 0 2% 0;
   `
-  const Devis = styled.button`
-    color: #121234;
-    background-color: #ffce07;
-    &:hover {
-      background-color: #ffce07;
-    }
-  `
-
-  const Call = styled.button`
-    color: #121234;
-    border: solid 1px #666666;
-    &:hover {
-      border: solid 1px #666666;
-    }
-  `
 
   const Paragraph = styled.p`
     font-family: 'Roboto', sans-serif;
@@ -43,10 +29,7 @@ function BottomComponents() {
           <Header>Alors Prêt à vous lancer ?</Header>
           <SubTitle>Obtenez votre devis personnalisé dès à présent.</SubTitle>
           <div className="row justify-content-center">
-            <div className="col-3 row">
-              <Devis className="btn col-12 mb-3">Devis personnalisé</Devis>
-              <Call className="btn col-12 mb-3">Réserver un appel gratuit</Call>
-            </div>
+            <Button col={'col-3'} />
           </div>
           <div className="row justify-content-center mt-4">
             <Paragraph className="col-8">

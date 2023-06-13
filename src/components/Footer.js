@@ -26,21 +26,17 @@ function Footer() {
     <React.Fragment>
       <FooterSection className="row">
         <div>
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-6">
-                {footerElements.map(({ id, title, data }) => (
-                  <Data id={id}>
-                    {title}{' '}
-                    {id === '2' ? (
-                      <Link href={`mailto:${data}`}>{data}</Link>
-                    ) : (
-                      <Link href={`tel:${data}`}>{data}</Link>
-                    )}
-                  </Data>
-                ))}
-              </div>
-            </div>
+          <div className="container text-center">
+            {footerElements.map(({ id, title, data }) => (
+              <Data id={id}>
+                {title}{' '}
+                {id === '2' ? (
+                  <Link href={`mailto:${data}`}>{data}</Link>
+                ) : (
+                  <Link href={`tel:${data}`}>{data}</Link>
+                )}
+              </Data>
+            ))}
           </div>
         </div>
       </FooterSection>

@@ -5,6 +5,23 @@ import myfreeworks from '../assets/myfreeworks.png'
 import rano from '../assets/rano.png'
 import townsend from '../assets/townsend.png'
 import cover from '../assets/cover.jpg'
+import onepage from '../assets/OnePage.png'
+import portfolio from '../assets/portfolio.png'
+import vitrine from '../assets/vitrine.png'
+import commerce from '../assets/e-commerce.png'
+import api from '../assets/api.jpg'
+import styled from 'styled-components'
+
+export const WebGrowth = () => {
+  const WebGrowthSpan = styled.span`
+    font-weight: 600;
+  `
+  return (
+    <>
+      <WebGrowthSpan>WebGrowth</WebGrowthSpan>
+    </>
+  )
+}
 
 export const whyElements = [
   {
@@ -97,6 +114,43 @@ export const operatedModeElements = [
   },
 ]
 
+export const offresElements = [
+  {
+    id: 'onepage',
+    offre: 'Site OnePage',
+    cover: onepage,
+    right: false,
+  },
+
+  {
+    id: 'vitrine',
+    offre: 'Site Vitrine',
+    cover: vitrine,
+    right: true,
+  },
+
+  {
+    id: 'e-commerce',
+    offre: 'Site E-commerce',
+    cover: commerce,
+    right: false,
+  },
+
+  {
+    id: 'portfolio',
+    offre: 'Portfolio',
+    cover: portfolio,
+    right: true,
+  },
+
+  {
+    id: 'api',
+    offre: 'Application backend / API Restful',
+    cover: api,
+    right: false,
+  },
+]
+
 export const reviewsElements = [
   {
     id: '1',
@@ -161,75 +215,241 @@ export const reviewsElements = [
     cover: cover,
   },
 ]
+const question1 = () => {
+  const Span = styled.span`
+    font-weight: 500;
+  `
+  return (
+    <>
+      {WebGrowth()} est une jeune agence de marketing digital qui opère sur le
+      marché. Elle dispose de toutes les
+      <Span> ressources (humaines et matérielles) </Span>
+      nécessaires pour mener à bien votre projet. Tout est fait avec précision
+      et assiduité. Le design est pensé et réalisé par des experts en la matière
+      et en fonction du projet et de vos objectifs. Chaque ligne est codée avec
+      soin et le contenu ajouté est déterminant pour augmenter l’impact de votre
+      site.
+      <br />
+      <br />
+      <p>
+        Nous vous accompagnerons à chaque étape du processus :
+        <div className="row justify-content-center">
+          <ul className="col-7 text-start">
+            <li>
+              <Span>L’étude</Span> de votre projet;
+            </li>
+            <li>
+              <Span>Le design</Span> de votre projet;
+            </li>
+            <li>
+              <Span>Le développement</Span> de votre projet ;
+            </li>
+            <li>
+              <Span>Le déploiement</Span> de votre projet ;
+            </li>{' '}
+            <li>
+              <Span>La maintenance</Span> de votre projet pour nous assurer que
+              tout y est.
+            </li>
+          </ul>
+        </div>
+      </p>
+      Aussi, nous vous impliquons personnellement dans le projet en travaillant
+      étroitement avec vous dans l’optique de ne laisser passer aucun de vos
+      désirs.
+      <br />
+      <br />
+      Faire appel à {WebGrowth()} pour concevoir un site internet, c’est se
+      concentrer sur les tâches plus importantes pour votre entreprise pendant
+      que des professionnels mettent en place pour vous,
+      <Span> une machine à prospects.</Span>
+    </>
+  )
+}
 
+const question2 = () => {
+  const Span = styled.span`
+    font-weight: 500;
+    font-size: 1.5em;
+  `
+
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      <Span>Pas du tout.</Span> Juste avec une idée, nous pouvons vous
+      accompagner sur votre projet. Nous allons ensemble organiser une réunion
+      pour discuter plus en profondeur et vous proposer des solutions
+      appropriées pour atteindre vos objectifs. Que ce soit pour{' '}
+      <Important>la charte graphique</Important>,{' '}
+      <Important>le design graphique</Important> ou{' '}
+      <Important>les contenus</Important>,{' '}
+      <Important>nous nous occupons de tout</Important>.
+      <br />
+      <br />
+      Seuls l’hébergement et le nom de domaine sont à votre charge. Toutefois,
+      nous sommes prêts à vous fournir un accompagnement gratuit afin de vous
+      orienter et de vous conseiller le meilleur choix. Tout dépendra des moyens
+      financiers à votre disposition.
+    </>
+  )
+}
+
+const question3 = () => {
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      {WebGrowth()} priorise la création de site web par l’exploitation des
+      <Important> langages de programmation</Important>,{' '}
+      <Important>les frameworks</Important> et{' '}
+      <Important>le coding en général</Important>. Notre objectif est d’aider
+      nos clients à créer des{' '}
+      <Important>sites originaux et authentiques</Important> qui vous permettent
+      de vous démarquer des offres proposées par les utilisateurs de CMS comme
+      WordPress.
+      <br />
+      <br />
+      L’avantage ici est d’optimiser votre référencement dans les moteurs de
+      recherche sans dépenser une fortune. Pendant que les templates nécessitent
+      plusieurs abonnements mensuels plus ou moins coûteux, nos services
+      requièrent uniquement l’achat d’un hébergement et d’un nom de domaine, ce
+      qui est une option très économique.
+    </>
+  )
+}
+
+const question4 = () => {
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      Chez {WebGrowth()}, nous aimons la flexibilité. De ce fait, les
+      gestionnaires de contenu ( CMS ) sont proscrits dans nos prestations. Nous
+      utilisons purement et uniquement le coding.
+      <br />
+      <br />
+      Comme outils utilisés nous avons les langages tels que :
+      <Important>JavaScript</Important> , <Important>HTML 5</Important>,{' '}
+      <Important>CSS 3</Important>, <Important>PHP</Important>,{' '}
+      <Important>MySql</Important> et les frameworks comme{' '}
+      <Important>React Js</Important>, <Important>Laravel</Important>, pour ne
+      citer qu’eux.
+    </>
+  )
+}
+
+const question6 = () => {
+  const Span = styled.span`
+    font-weight: 500;
+    font-size: 1.5em;
+  `
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      <Span> Bien entendu</Span>. Cela est primordial et passe par plusieurs
+      points :
+      <ul>
+        <li>
+          <Important>Les contenus (textes, images, etc.)</Important> : ils
+          seront réalisés avec soin et optimisés conformément aux exigences
+          actuelles dans le domaine de façon à booster votre référencement.
+        </li>
+
+        <li>
+          <Important>La structure technique</Important> : Votre code source,
+          propre, commenté dans certains cas, respectera les règles de balisages
+          HTML et participera au chargement rapide du votre site.
+        </li>
+
+        <li>
+          <Important>Liens externes</Important> : l’échange de ceux-ci avec
+          votre site sera
+        </li>
+      </ul>
+    </>
+  )
+}
+
+const question7 = () => {
+  const Span = styled.span`
+    font-weight: 500;
+    font-size: 1.5em;
+  `
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      <Span> Tout à fait</Span>, il le sera. <Important>60 %</Important> des
+      sites sur internet sont consultés via des moyens mobiles comme les
+      téléphones, tablettes et autres mobiles et il y a de grande chance que
+      vous soyez en train de consulter celui-ci sur votre smartphone.
+      <br />
+      <br />
+      Étant donné que chez {WebGrowth()} nous mettons l’accent sur le fait qu’un
+      site doit être un meilleur investissement, il serait contraire à cela que
+      votre site ne soit pas optimisé pour les mobiles, tablettes etc.
+    </>
+  )
+}
+
+const question8 = () => {
+  const Span = styled.span`
+    font-weight: 500;
+    font-size: 1.5em;
+  `
+  const Important = styled.span`
+    font-weight: 500;
+    color: #121234;
+  `
+  return (
+    <>
+      <Span>Aucunement</Span>. Et c’est l’avantage du système «{' '}
+      <Important>All in One</Important> ». Tout est compris dans le prix de la
+      prestation. Jusqu’à ce que vous soyez{' '}
+      <Important>satisfait à 100%</Important>, toutes les retouches sont
+      comprises dans la prestation. Même pas un centime vous sera facturé de
+      plus
+    </>
+  )
+}
 export const faqElements = [
   {
     id: '1',
     question: 'Pourquoi confier mon projet de conception de site à WebGrowth ?',
-    answer: `WebGrowth est une jeune agence de marketing digital qui opère
-    sur le marché. Elle dispose de toutes les ressources
-    (humaines et matérielles) nécessaires pour mener à bien votre projet.
-    Tout est fait avec précision et assiduité.
-    Le design est pensé et réalisé par des experts en la matière
-    et en fonction du projet et de vos objectifs. Chaque ligne est codée avec soin et
-    le contenu ajouté est déterminant pour augmenter l’impact de votre site.
-    Nous vous accompagnerons à chaque étape du processus :
-    - L’étude de votre projet;
-    - Le design de votre projet;
-    - Le développement de votre projet ;
-    - Le déploiement de votre projet ;
-    La maintenance de votre projet pour nous assurer que tout y est.
-    Aussi, nous vous impliquons personnellement dans le projet en
-    travaillant étroitement avec vous dans l’optique de ne laisser
-    passer aucun de vos désirs.
-    Faire appel à WebGrowth pour concevoir un site internet,
-    c’est se concentrer sur les tâches
-    plus importantes pour votre entreprise pendant que des
-    professionnels mettent en place pour vous une machine à prospects.`,
+    answer: question1(),
   },
 
   {
     id: '2',
     question:
       'Devrais-je avoir toutes les ressources nécessaires à portée de main avant de vous contacter.?',
-    answer: `Pas du tout. Juste avec une idée, nous pouvons vous
-    accompagner sur votre projet. Nous allons ensemble organiser une réunion pour
-    discuter plus en profondeur et vous proposer des solutions appropriées
-    pour atteindre vos objectifs. Que ce soit pour la charte graphique,
-    le design graphique ou les contenus, nous nous occupons de tout.
-    Seuls l’hébergement et le nom de domaine sont à votre charge.
-    Toutefois, nous sommes prêts à vous fournir un accompagnement
-    gratuit afin de vous orienter et de vous conseiller le meilleur choix.
-    Tout dépendra des moyens financiers à votre disposition.`,
+    answer: question2(),
   },
 
   {
     id: '3',
     question:
       'Dois-je avoir un hébergement et un nom de domaine avant toutes choses?',
-    answer: `WebGrowth priorise la création de site web par l’exploitation des langages
-    de programmation, les frameworks et le coding en général.
-    Notre objectif est d’aider nos clients à créer des sites originaux et authentiques
-    qui vous permettent de vous démarquer des offres proposées par
-    les utilisateurs de CMS comme WordPress.
-    L’avantage ici est d’optimiser votre référencement dans
-    les moteurs de recherche sans dépenser une fortune. Pendant que les
-    templates nécessitent plusieurs abonnements mensuels
-    plus ou moins coûteux, nos services requièrent uniquement
-    l’achat d’un hébergement et d’un nom de domaine,
-    ce qui est une option très économique.`,
+    answer: question3(),
   },
 
   {
     id: '4',
     question:
       'Quels sont les outils de développement utilisés chez WebGrowth.?',
-    answer: `Chez WebGrowth, nous aimons la flexibilité. De ce fait, les gestionnaires de contenu
-    ( CMS ) sont proscrits dans nos prestations. Nous utilisons purement et
-    uniquement le coding.
-    Comme outils utilisés nous avons les langages tels que : JavaScript, HTML 5,
-    CSS 3, PHP, MySql et les frameworks comme
-    React Js, Laravel, pour ne citer qu’eux.`,
+    answer: question4(),
   },
 
   {
@@ -245,29 +465,22 @@ export const faqElements = [
   },
 
   {
-    id: '8',
+    id: '6',
     question: 'Mon site sera-t-il optimisé pour le référencement SEO.?',
-    answer: `Bien entendu. Cela est primordial et passe par plusieurs points :
-    - Les contenus (textes, images, etc.) : ils seront réalisés avec soin et
-    optimisés conformément aux exigences actuelles dans le
-    domaine de façon à booster votre référencement.
-    - La structure technique : Votre code source, propre, commenté dans certains cas,
-    respectera les règles de balisages HTML et participera au
-    chargement rapide du votre site.
-    - Liens externes : l’échange de ceux-ci avec votre site sera`,
+    answer: question6(),
   },
 
   {
-    id: '88',
+    id: '7',
     question:
       'Mon site sera-t-il adapté aux autres écrans ( mobiles, tablettes, etc. ).?',
-    answer: `Tout à fait, il le sera. 60 % des sites sur internet sont consultés via
-    des moyens mobiles comme les téléphones, tablettes et autres
-    mobiles et il y a de grande chance que vous soyez en train de
-    consulter celui-ci sur votre smartphone. Étant donné que chez
-    WebGrowth nous mettons l’accent sur le fait qu’un site doit être un
-    meilleur investissement, il serait contraire à cela que votre site
-    ne soit pas optimisé pour les mobiles, tablettes etc.`,
+    answer: question7(),
+  },
+
+  {
+    id: '8',
+    question: 'Quant aux retouches, sont-elles facturées? ',
+    answer: question8(),
   },
 ]
 

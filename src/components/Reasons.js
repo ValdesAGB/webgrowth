@@ -8,13 +8,21 @@ function Reasons() {
   const ReasonsSection = styled.section`
     background-color: #121234;
     font-family: 'Roboto', sans-serif;
-    padding: 2% 0 2% 0;
+    @media (min-width: 320px) {
+      padding-top: 10%;
+      padding-bottom: 10%;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 2%;
+      padding-bottom: 2%;
+    }
   `
   return (
     <React.Fragment>
       <ReasonsSection>
         <div>
-          <div className="container">
+          <div className="container ">
             <div className="row text-center">
               <Why />
               <How />

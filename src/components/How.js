@@ -5,20 +5,26 @@ function How() {
   const HowSection = styled.section`
     background-color: white;
     padding: 2%;
-    border-radius: 2%;
-    margin: 0 2% 0 2%;
+    border-radius: 20px;
+
     transition: background-color 500ms, box-shadow 600ms;
     &:hover {
       background-color: #ffce07;
       box-shadow: 0px 0px 10px #ffce07;
       cursor: pointer;
     }
+    @media (min-width: 320px) {
+      margin: 5% 0 5% 0;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0 2% 0 2%;
+    }
   `
 
   const Header = styled.h3`
     font-weigth: bold;
     font-size: 22px;
-    margin-bottom: 10%;
     border-radius: 20px;
     color: white;
     background-color: #121234;
@@ -27,6 +33,15 @@ function How() {
     ${HowSection}:hover & {
       background-color: white;
       color: black;
+    }
+    margin-bottom: 10%;
+    @media (min-width: 768px) {
+      margin-bottom: 4%;
+      padding: 3%;
+    }
+    @media (min-width: 1024px) {
+      margin-bottom: 4%;
+      padding: 5%;
     }
   `
 
@@ -43,8 +58,9 @@ function How() {
   `
   return (
     <React.Fragment>
-      <HowSection className="col">
+      <HowSection className="col-12 col-lg">
         <Header>Comment 👀</Header>
+
         <div>
           <Paragraph>
             Avec son service <Gras>All in One</Gras>, <Gras>WebGrowth</Gras>{' '}

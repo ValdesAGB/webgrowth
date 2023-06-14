@@ -6,7 +6,7 @@ function Button({ col }) {
     color: #121234;
     background-color: #ffce07;
     border: none;
-    padding: 3%;
+    padding: 4%;
     border-radius: 5px;
     &:hover {
       background-color: #ffce07;
@@ -14,6 +14,7 @@ function Button({ col }) {
     &:active {
       background-color: #ffce07;
     }
+    font-weight: 500;
   `
 
   const Call = styled.a`
@@ -26,6 +27,7 @@ function Button({ col }) {
     &:hover {
       border: solid 1px #666666;
     }
+    font-weight: 500;
   `
   return (
     <React.Fragment>

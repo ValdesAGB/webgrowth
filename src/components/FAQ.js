@@ -9,7 +9,8 @@ const slideDown = keyframes`
   }
   100% {
     opacity: 1;
-    max-height: 1000px;
+    max-height: 500px;
+   
   }
 `
 
@@ -39,6 +40,9 @@ function FAQ() {
     font-weight: bold;
     font-size: 24px;
     margin: 7% 0 7% 0;
+    @media (min-width: 320px) {
+      margin: 10% 0 10% 0;
+    }
   `
 
   return (
@@ -46,7 +50,7 @@ function FAQ() {
       <FAQSection>
         <div className="container">
           <div className="row justify-content-center text-center">
-            <div className="col-6">
+            <div className="col-md-10 col-lg-8 col-xl-6">
               <Header>Questions fréquemment posés</Header>
               {faqElements.map((item, index) => (
                 <DivAll key={index}>
@@ -85,9 +89,16 @@ function FAQ() {
 
 const FAQSection = styled.section`
   margin: 5% 0 2% 0;
+  @media (min-width: 1440px) {
+    margin: 2% 0 2% 0;
+  }
 `
 const DivAll = styled.div`
   position: relative;
+  margin: 7% 0 7% 0;
+  @media (min-width: 768px) {
+    margin: 2% 0 2% 0;
+  }
 `
 
 const IconeDiv = styled.div`
@@ -100,37 +111,49 @@ const Icone = styled.i`
 `
 
 const Question = styled.div`
-  background-color: #121234;
+  background-color: #11121e;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
+  @media (min-width: 320px) {
+    padding: 0 5% 0 5%;
+  }
 `
 
 const QuestionButton = styled.p`
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.95em;
   color: white;
-  padding: 2% 2% 0 2%;
+  padding: 2% 0.5% 0 0.5%;
 `
 
 const AnswerContainer = styled.div`
   position: relative;
-  top: -20px;
-  z-index: -1;
-  background-color: #cccccb;
+  z-index: 1;
+  background-color: #121234;
+  color: white;
   text-align: justify;
   opacity: ${(props) => (props.active ? 1 : 0)};
-  max-height: ${(props) => (props.active ? '1000px' : '0')};
-  overflow: hidden;
   animation: ${(props) => (props.active ? slideDown : slideUp)} 0.5s forwards;
-  padding: ${(props) => (props.active ? '5% 2% 2% 2%' : 0)};
   margin-bottom: 2%;
   border-radius: 10px;
+  @media (min-width: 320px) {
+    top: -10px;
+    padding: ${(props) => (props.active ? '10% 0% 0% 0%' : 0)};
+    max-height: ${(props) => (props.active ? '500px' : '0')};
+    overflow-y: scroll;
+  }
+  @media (min-width: 375px) {
+    padding: ${(props) => (props.active ? '5% 0% 0% 0%' : 0)};
+  }
 `
 
 const Answer = styled.div`
   font-family: 'Roboto', sans-serif;
   margin-top: 5px;
   margin-bottom: 6%;
+  font-weight: 300;
 `
 
 export default FAQ

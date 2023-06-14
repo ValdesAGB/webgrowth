@@ -5,7 +5,7 @@ function Goal() {
   const GoalSection = styled.section`
     background-color: white;
     padding: 2%;
-    border-radius: 2%;
+    border-radius: 20px;
     transition: background-color 500ms, box-shadow 600ms;
     &:hover {
       background-color: #ffce07;
@@ -26,6 +26,14 @@ function Goal() {
       background-color: white;
       color: black;
     }
+    @media (min-width: 768px) {
+      margin-bottom: 4%;
+      padding: 3%;
+    }
+    @media (min-width: 1024px) {
+      margin-bottom: 4%;
+      padding: 5%;
+    }
   `
 
   const Paragraph = styled.p`
@@ -41,8 +49,9 @@ function Goal() {
   `
   return (
     <React.Fragment>
-      <GoalSection className="col">
+      <GoalSection className="col-12 col-lg">
         <Header>Objectif 🎉</Header>
+
         <div>
           <Paragraph>
             Notre <Gras>objectif</Gras> chez WebGrowth est de nous assurer que

@@ -8,10 +8,12 @@ import BottomComponents from './BottomComponents'
 import Footer from './Footer'
 import Welcome from './Welcome'
 import Offres from './Offres'
+import Header from './Header'
 
 function App() {
   return (
     <React.Fragment>
+      <Header />
       <main className="row">
         <Welcome />
         <Reasons />

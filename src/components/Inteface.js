@@ -7,6 +7,19 @@ function Inteface() {
     position: absolute;
     top: 20%;
     left: 83%;
+    @media (min-width: 768px) {
+      top: 25%;
+      left: 89%;
+    }
+    @media (min-width: 1024px) {
+      top: 25%;
+      left: 86%;
+    }
+
+    @media (min-width: 2560px) {
+      top: 20%;
+      left: 74%;
+    }
   `
   const shakeAnimation = keyframes`
   0% {
@@ -39,7 +52,7 @@ function Inteface() {
   `
   return (
     <React.Fragment>
-      <InterfaceDiv className="col-1">
+      <InterfaceDiv className="col-1 d-none d-md-block">
         <CoverInterface src={Interface} alt="interface" />
       </InterfaceDiv>
     </React.Fragment>

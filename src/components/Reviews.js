@@ -14,8 +14,49 @@ function Reviews() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          autoplay: true,
+          autoplaySpeed: 3000,
+        },
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          autoplay: true,
+          autoplaySpeed: 4000,
+        },
+      },
+    ],
   }
 
+  const HeaderContainer = styled.div`
+    @media (min-width: 320px) {
+      margin-bottom: 10%;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 5%;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 2%;
+    }
+  `
   const Header = styled.h1`
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -43,25 +84,49 @@ function Reviews() {
 
   const Cover = styled.img`
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+
+    @media (min-width: 320px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (min-width: 375px) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media (min-width: 425px) {
+      width: 110px;
+      height: 110px;
+    }
+
+    @media (min-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+  `
+
+  const Review = styled.p`
+    font-style: italic;
   `
   return (
     <React.Fragment>
       <section className="text-center">
-        <div>
-          <div className="container">
-            <div className="row justify-content-center">
-              <Header className="col-6">Ils nous ont fait confiance...</Header>
-            </div>
+        <div className="">
+          <div className="container ">
+            <HeaderContainer className="row justify-content-center ">
+              <Header className="col-12 col-md-6 ">
+                Ils nous ont fait confiance...
+              </Header>
+            </HeaderContainer>
 
-            <Slider {...settings}>
+            <Slider {...settings} className="">
               {reviewsElements.map(({ id, review, name, fonction, cover }) => (
-                <div key={id} className="col-4">
+                <div key={id}>
                   <ReviewDiv className="">
-                    <p>{review}</p>
+                    <Review>"{review}"</Review>
                     <div className="row align-items-center">
-                      <div className="col-1">
+                      <div className="col-4 col-md-3 col-lg-1">
                         <Cover src={cover} alt={id} />
                       </div>
                       <div className="col">

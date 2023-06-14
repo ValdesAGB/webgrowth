@@ -49,31 +49,43 @@ export const archivementsElements = [
   {
     id: 'legal',
     cover: legal,
+    description:
+      "Legal est un site vitrine pour une agence/entreprise spécialisée dans le droit. Grâce à cette vitrine, les potentiels clients ont facilement accès aux informations voulues et une facilité à entrer en contact avec les membres de l'équipe de l'agence pour de potentiels services.",
   },
 
   {
     id: 'rano',
     cover: rano,
+    description:
+      "Ce projet est un site OnePage/landing page dédié à la présentation d'une nouvelle application mobile. Avec un design moderne et attrayant, j'ai mis en avant les fonctionnalités uniques de cette application et les avantages qu'elle offre. Le site offre une expérience immersive avec des visuels captivants, des animations fluides et des informations claires pour attirer l'attention des visiteurs.",
   },
 
   {
     id: 'lana',
     cover: lana,
+    description:
+      "Découvrez un site vitrine captivant conçu spécialement pour les passionnés de l'art visuel. Présentant le travail exceptionnel d'un talentueux artiste visuel ( fictif ), ce site est une vitrine numérique mettant en avant sa créativité, son expertise et son style unique. Chaque élément visuel est soigneusement sélectionné pour évoquer des émotions et captiver votre imagination.",
   },
 
   {
     id: 'carla',
     cover: carla,
+    description:
+      'Un peu comme le projet Clarita, Carla, photographe, a eu droit à un portfolio. Le sien par contre est multipage et a une section blog (simulées bien entendu).',
   },
 
   {
     id: 'myfreeworks',
     cover: myfreeworks,
+    description:
+      'Un projet de marketplace, il permet à tout vendeur de proposer ses articles au grand public.',
   },
 
   {
     id: 'townsend',
     cover: townsend,
+    description:
+      'Ce projet est un portfolio multipage pour une personne fictive (simulation).',
   },
 ]
 
@@ -266,17 +278,14 @@ const question1 = () => {
     </>
   )
 }
-
+const Important = styled.span`
+  font-weight: 500;
+`
+const Span = styled.span`
+  font-weight: 500;
+  font-size: 1.5em;
+`
 const question2 = () => {
-  const Span = styled.span`
-    font-weight: 500;
-    font-size: 1.5em;
-  `
-
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
       <Span>Pas du tout.</Span> Juste avec une idée, nous pouvons vous
@@ -298,10 +307,6 @@ const question2 = () => {
 }
 
 const question3 = () => {
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
       {WebGrowth()} priorise la création de site web par l’exploitation des
@@ -324,10 +329,6 @@ const question3 = () => {
 }
 
 const question4 = () => {
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
       Chez {WebGrowth()}, nous aimons la flexibilité. De ce fait, les
@@ -346,17 +347,9 @@ const question4 = () => {
 }
 
 const question6 = () => {
-  const Span = styled.span`
-    font-weight: 500;
-    font-size: 1.5em;
-  `
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
-      <Span> Bien entendu</Span>. Cela est primordial et passe par plusieurs
+      <Span>Bien entendu</Span>. Cela est primordial et passe par plusieurs
       points :
       <ul>
         <li>
@@ -381,14 +374,6 @@ const question6 = () => {
 }
 
 const question7 = () => {
-  const Span = styled.span`
-    font-weight: 500;
-    font-size: 1.5em;
-  `
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
       <Span> Tout à fait</Span>, il le sera. <Important>60 %</Important> des
@@ -405,14 +390,6 @@ const question7 = () => {
 }
 
 const question8 = () => {
-  const Span = styled.span`
-    font-weight: 500;
-    font-size: 1.5em;
-  `
-  const Important = styled.span`
-    font-weight: 500;
-    color: #121234;
-  `
   return (
     <>
       <Span>Aucunement</Span>. Et c’est l’avantage du système «{' '}
@@ -488,12 +465,14 @@ export const footerElements = [
   {
     id: '1',
     title: 'Whatsapp:',
+    icone: 'bi-whatsapp',
     data: '+229 53 82 72 59',
   },
 
   {
     id: '2',
     title: 'Mail:',
+    icone: 'bi-envelope',
     data: 'webgrowthservice@gmail.com',
   },
 ]

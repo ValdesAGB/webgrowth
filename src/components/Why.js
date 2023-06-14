@@ -6,7 +6,7 @@ function Why() {
   const WhySection = styled.section`
     background-color: white;
     padding: 2%;
-    border-radius: 2%;
+    border-radius: 20px;
     transition: background-color 500ms, box-shadow 600ms;
     &:hover {
       background-color: #ffce07;
@@ -28,6 +28,15 @@ function Why() {
       background-color: white;
       color: black;
     }
+    @media (min-width: 768px) {
+      margin-bottom: 4%;
+      padding: 3%;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 4%;
+      padding: 5%;
+    }
   `
 
   const Paragraph = styled.p`
@@ -41,8 +50,9 @@ function Why() {
     color: black;
   `
   return (
-    <WhySection className="col">
+    <WhySection className="col-12 col-lg">
       <Header>Pourquoi ❓</Header>
+
       <div>
         {whyElements.map(({ number, text }) => (
           <Paragraph key={number}>

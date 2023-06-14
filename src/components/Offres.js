@@ -8,9 +8,7 @@ function Offres() {
     sed do eiusmod tempor incididunt ut labore et dolore
     magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in
-    reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur.`
+    commodo consequat. `
 
   const TitleContainer = styled.div`
     margin: 10% 0 5% 0;
@@ -54,15 +52,13 @@ function Offres() {
   `
 
   const Hover = styled.div`
-    background-color: rgba(204, 204, 203, 0.8);
+    background-color: rgba(204, 204, 203, 0.9);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: scroll;
     padding: 0 10% 0 10%;
     z-index: 0;
     transform: ${(props) =>
@@ -71,6 +67,16 @@ function Offres() {
     ${OffresContainer}:hover & {
       transform: ${(props) =>
         props.sides !== true ? 'translateX(0%)' : ' translateX(0%)'};
+    }
+
+    @media (min-width: 768px) {
+      padding: 10%;
+    }
+
+    @media (min-width: 1360px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   `
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import fusee from '../assets/fusee.png'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 function Fusee() {
   const FuseeDivContainer = styled.div`
@@ -42,8 +42,17 @@ function Fusee() {
   `
   const FuseeDiv = styled.div`
     position: relative;
+    position: relative;
     top: 15%;
     left: 49%;
+    @media (min-width: 1360px) {
+      top: 5%;
+      left: 20%;
+    }
+    @media (min-width: 2560px) {
+      top: 3%;
+      left: 22%;
+    }
     @media (min-width: 1360px) {
       top: 5%;
       left: 20%;
@@ -58,6 +67,15 @@ function Fusee() {
     transition: transform 500ms;
     ${FuseeDivContainer}:hover & {
       transform: translateX(10px) translateY(-10px);
+    }
+    @media (min-width: 1360px) {
+      width: 80%;
+    }
+    @media (min-width: 2560px) {
+      width: 80%;
+      ${FuseeDivContainer}:hover & {
+        transform: translateX(20px) translateY(-20px);
+      }
     }
     @media (min-width: 1360px) {
       width: 80%;

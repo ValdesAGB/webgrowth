@@ -74,36 +74,29 @@ function Reviews() {
 
   const Name = styled.h5`
     font-weight: 500;
-    font-size: 14px;
+
+    @media (min-width: 320px) {
+      font-size: 0.9em;
+    }
+    @media (min-width: 425px) {
+      font-size: 1.1em;
+    }
   `
 
   const Fonction = styled.h6`
     font-weight: 400;
-    font-size: 14px;
+    @media (min-width: 320px) {
+      font-size: 0.9em;
+    }
+    @media (min-width: 425px) {
+      font-size: 1.1em;
+    }
   `
 
   const Cover = styled.img`
     border-radius: 50%;
-
-    @media (min-width: 320px) {
-      width: 80px;
-      height: 80px;
-    }
-
-    @media (min-width: 375px) {
-      width: 100px;
-      height: 100px;
-    }
-
-    @media (min-width: 425px) {
-      width: 110px;
-      height: 110px;
-    }
-
-    @media (min-width: 768px) {
-      width: 100px;
-      height: 100px;
-    }
+    width: 100px;
+    height: 100px;
   `
 
   const Review = styled.p`
@@ -111,8 +104,8 @@ function Reviews() {
   `
   return (
     <React.Fragment>
-      <section className="text-center">
-        <div className="">
+      <section className="text-center" id="reviews">
+        <div>
           <div className="container ">
             <HeaderContainer className="row justify-content-center ">
               <Header className="col-12 col-md-6 ">
@@ -120,13 +113,13 @@ function Reviews() {
               </Header>
             </HeaderContainer>
 
-            <Slider {...settings} className="">
+            <Slider {...settings}>
               {reviewsElements.map(({ id, review, name, fonction, cover }) => (
                 <div key={id}>
-                  <ReviewDiv className="">
+                  <ReviewDiv>
                     <Review>"{review}"</Review>
                     <div className="row align-items-center">
-                      <div className="col-4 col-md-3 col-lg-1">
+                      <div className="col-5 col-md-4 col-lg-3">
                         <Cover src={cover} alt={id} />
                       </div>
                       <div className="col">

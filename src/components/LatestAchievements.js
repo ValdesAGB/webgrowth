@@ -27,9 +27,10 @@ function LatestAchievements() {
       margin-bottom: 5%;
     }
   `
+
   return (
     <React.Fragment>
-      <AchievementsSections>
+      <AchievementsSections id="achievements">
         <div>
           <div className="container text-center">
             <Header>Nos Dernières Réalisations</Header>

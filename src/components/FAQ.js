@@ -47,7 +47,7 @@ function FAQ() {
 
   return (
     <React.Fragment>
-      <FAQSection>
+      <FAQSection id="faq">
         <div className="container">
           <div className="row justify-content-center text-center">
             <div className="col-md-10 col-lg-8 col-xl-6">
@@ -146,6 +146,23 @@ const AnswerContainer = styled.div`
   }
   @media (min-width: 375px) {
     padding: ${(props) => (props.active ? '5% 0% 0% 0%' : 0)};
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #11121e;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #11121e;
   }
 `
 

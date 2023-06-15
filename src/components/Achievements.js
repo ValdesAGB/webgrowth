@@ -1,5 +1,5 @@
 import React from 'react'
-import { archivementsElements } from '../data'
+import { archivementsElements, rdv } from '../data'
 import styled from 'styled-components'
 
 function Achievements() {
@@ -9,7 +9,7 @@ function Achievements() {
       grid-template-columns: 100%;
       grid-template-rows: auto;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 32.33% 32.33% 33.33%;
       gap: 10px;
@@ -36,7 +36,7 @@ function Achievements() {
       margin-bottom: 5%;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       grid-column: ${(props) =>
         props.ids === 'legal'
           ? ' 1 / 3'
@@ -69,8 +69,10 @@ function Achievements() {
       opacity: 1;
       transform: translateX(0%);
     }
-    overflow: scroll;
 
+    @media (max-width: 1360px) {
+      overflow: scroll;
+    }
     @media (min-width: 320px) {
       padding: 5%;
     }
@@ -91,7 +93,7 @@ function Achievements() {
       padding: 5% 5% 2% 5%;
     }
   `
-  const Button = styled.a`
+  const GetButton = styled.a`
     font-family: 'Roboto', sans-serif;
     background-color: #121234;
     border: none;
@@ -102,20 +104,50 @@ function Achievements() {
     text-decoration: none;
   `
 
+  const ViewProjet = styled.a`
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffce07;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+    padding: 2%;
+    text-decoration: none;
+
+    @media (min-width: 320px) {
+      margin-bottom: 5%;
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 0%;
+      margin-right: 5%;
+    }
+  `
+
   return (
     <React.Fragment>
       <Grid>
-        {archivementsElements.map(({ id, description, cover }) => (
+        {archivementsElements.map(({ id, description, cover, href }) => (
           <GridElements ids={id} key={id} className=" align-items-center ">
             <img src={cover} alt={id} className="w-100" />
             <Hover>
               <Paragraph>{description}</Paragraph>
-              <Button
-                href="https://calendly.com/webgrowthservice/call-de-decouverte"
-                target="_blank"
-              >
-                Obtenez le votre dès maintenant
-              </Button>
+              <div className="row justify-content-center align-items-center">
+                <ViewProjet
+                  href={href}
+                  target="_blank"
+                  className="col-6 col-md-3"
+                >
+                  Voir le projet
+                </ViewProjet>
+                <GetButton
+                  href={rdv}
+                  target="_blank"
+                  className="col-11 col-md-5 col-lg-7 col-xl-6 col-xxl-5"
+                >
+                  Obtenez le votre dès maintenant
+                </GetButton>
+              </div>
             </Hover>
           </GridElements>
         ))}

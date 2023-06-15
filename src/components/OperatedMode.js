@@ -56,7 +56,10 @@ function OperatedMode() {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    transition: transform 1s;
+    ${OperatedContainer}:hover & {
+      transform: translateY(-20px);
+    }
     @media (min-width: 320px) {
       background-color: ${(props) =>
         props.id === '01' || props.id === '03' || props.id === '05'
@@ -69,12 +72,6 @@ function OperatedMode() {
         props.id === '01' || props.id === '04' || props.id === '05'
           ? '#121234'
           : '#FFCE07'};
-
-      transition: transform 1s;
-
-      ${OperatedContainer}:hover & {
-        transform: translateY(-20px);
-      }
     }
   `
   const Title = styled.h2`

@@ -23,6 +23,40 @@ export const WebGrowth = () => {
   )
 }
 
+export const rdv = 'https://calendly.com/webgrowthservice/call-de-decouverte'
+
+export const navigationElements = [
+  {
+    id: 'acceuil',
+    title: 'Acceuil',
+    href: '#',
+  },
+
+  {
+    id: 'achievements',
+    title: 'Nos Réalisations',
+    href: '#achievements',
+  },
+
+  {
+    id: 'offers',
+    title: 'Nos Offres',
+    href: '#offers',
+  },
+
+  {
+    id: 'reviews',
+    title: 'Avis Clients',
+    href: '#reviews',
+  },
+
+  {
+    id: 'faq',
+    title: 'FAQ',
+    href: '#faq',
+  },
+]
+
 export const whyElements = [
   {
     number: 36,
@@ -51,13 +85,15 @@ export const archivementsElements = [
     cover: legal,
     description:
       "Legal est un site vitrine pour une agence/entreprise spécialisée dans le droit. Grâce à cette vitrine, les potentiels clients ont facilement accès aux informations voulues et une facilité à entrer en contact avec les membres de l'équipe de l'agence pour de potentiels services.",
+    href: 'https://legal.valdesagbokoni.com/',
   },
 
   {
     id: 'rano',
     cover: rano,
     description:
-      "Ce projet est un site OnePage/landing page dédié à la présentation d'une nouvelle application mobile. Avec un design moderne et attrayant, j'ai mis en avant les fonctionnalités uniques de cette application et les avantages qu'elle offre. Le site offre une expérience immersive avec des visuels captivants, des animations fluides et des informations claires pour attirer l'attention des visiteurs.",
+      "Ce projet est un site OnePage/landing page dédié à la présentation d'une nouvelle application mobile. Avec un design moderne et attrayant, il a été mis en avant les fonctionnalités uniques de cette application et les avantages qu'elle offre. Le site offre une expérience immersive avec des visuels captivants, des animations fluides et des informations claires pour attirer l'attention des visiteurs.",
+    href: 'https://rano.valdesagbokoni.com/',
   },
 
   {
@@ -65,13 +101,15 @@ export const archivementsElements = [
     cover: lana,
     description:
       "Découvrez un site vitrine captivant conçu spécialement pour les passionnés de l'art visuel. Présentant le travail exceptionnel d'un talentueux artiste visuel ( fictif ), ce site est une vitrine numérique mettant en avant sa créativité, son expertise et son style unique. Chaque élément visuel est soigneusement sélectionné pour évoquer des émotions et captiver votre imagination.",
+    href: 'https://lana.valdesagbokoni.com/',
   },
 
   {
     id: 'carla',
     cover: carla,
     description:
-      'Un peu comme le projet Clarita, Carla, photographe, a eu droit à un portfolio. Le sien par contre est multipage et a une section blog (simulées bien entendu).',
+      'Carla, photographe, a eu droit à un portfolio. Le sien par contre est multipage et a une section blog (simulées).',
+    href: 'https://carlatown.valdesagbokoni.com/',
   },
 
   {
@@ -79,13 +117,15 @@ export const archivementsElements = [
     cover: myfreeworks,
     description:
       'Un projet de marketplace, il permet à tout vendeur de proposer ses articles au grand public.',
+    href: 'https://myfreeworks.valdesagbokoni.com/',
   },
 
   {
     id: 'townsend',
     cover: townsend,
     description:
-      'Ce projet est un portfolio multipage pour une personne fictive (simulation).',
+      "Étant aussi un projet de portfolio, ce projet diffère du précédent portfolio, par son mode multipage et une exposition plus détaillée de l'artiste.",
+    href: 'https://portfolio-multipage.valdesagbokoni.com/',
   },
 ]
 
@@ -122,7 +162,7 @@ export const operatedModeElements = [
     id: '05',
     title: 'Déploiement et maintenance',
     paragraph:
-      'Nos experts de chaque prestation intervenant dans votre projet, mettons à dispositions de ce dernier leur expertise, afin de faire ressortir le meilleur de votre projet.',
+      'Une version finale approuvée par vous, de votre site sera déployée sur votre hébergeur que vous aurez pris le soin d’acheter plus tôt avant cette étape, suivi d’une maintenance pour prévenir d’éventuellement bugs.',
   },
 ]
 
@@ -132,6 +172,9 @@ export const offresElements = [
     offre: 'Site OnePage',
     cover: onepage,
     right: false,
+    text: `Le site OnePage, également appelé site monopage, est un type de site web qui se compose d'une seule page contenant l'ensemble du contenu. Les liens sur cette page redirigent vers des sections spécifiques de celle-ci. Il est particulièrement adapté pour présenter des projets simples ou des produits ne nécessitant pas beaucoup de contenu.
+    
+    En revanche, une Landing page, également connue sous le nom de page d'accueil, est une page web utilisée dans le cadre d'une campagne marketing pour convertir les visiteurs en prospects ou clients. Elle vise à promouvoir un produit ou un service spécifique.`,
   },
 
   {
@@ -139,6 +182,7 @@ export const offresElements = [
     offre: 'Site Vitrine',
     cover: vitrine,
     right: true,
+    text: "Un site vitrine présente les activités, les produits ou services d'une entreprise/organisation. Le but est de donner une dimension professionnelle et crédible pour cette dernière sur le web et de susciter l'intérêt des visiteurs. L'objectif étant de les inciter à en savoir plus sur l'entreprise ou à contacter l'entreprise pour des informations supplémentaires.",
   },
 
   {
@@ -146,6 +190,7 @@ export const offresElements = [
     offre: 'Site E-commerce',
     cover: commerce,
     right: false,
+    text: "Il permet de vendre des produits ou services en ligne. Le site e-commerce permet au client de parcourir les produits ou services disponibles, les ajouter à un panier d'achat, passer une commande et procéder au paiement en ligne. Le site e-commerce gère également le processus de livraison et de suivi des commandes. Très populaires ces dernières années, il peut être utilisé pour vendre des produits physiques (vêtements, appareils électroniques, etc), des logiciels ou des livres électroniques",
   },
 
   {
@@ -153,6 +198,7 @@ export const offresElements = [
     offre: 'Portfolio',
     cover: portfolio,
     right: true,
+    text: "Un portfolio est un ensemble de travaux réalisés par une personne dans un domaine particulier. Cela peut être en rapport avec des projets artistiques, des réalisations professionnelles, des articles de blog, des photographies ou vidéos, etc. Le portfolio permet donc d'exhiber ses compétences et de démontrer toute son expérience à des clients potentiels, des employeurs ou partenaires commerciaux. Avec la dématérialisation des services physiques, il est plus conseillé aujourd'hui de présenter son portfolio sous forme de site web pour optimiser sa visibilité sur internet.",
   },
 
   {
@@ -160,6 +206,7 @@ export const offresElements = [
     offre: 'Application backend / API Restful',
     cover: api,
     right: false,
+    text: "Une application backend est une application qui s'exécute sur un serveur et qui fournit des fonctionnalités pour les applications frontales (applications mobiles, site web). Son rôle principal est de gérer et de stocker des données et de traiter les requêtes de l'application frontale. Elle permet également de gérer l'authentification des utilisateurs, la sécurité des données et les connexions avec d'autres systèmes. Les applications backend sont souvent utilisées pour les applications complexes qui nécessitent une gestion de données importantes. Elles sont aussi adaptées pour les applications nécessitant des interactions avec d'autres systèmes.",
   },
 ]
 
@@ -186,44 +233,8 @@ export const reviewsElements = [
     id: '3',
     review:
       "WebGrowth m'a permis de convertir plus de 100 prospects en un mois.",
-    name: 'Précieux TOSSOU',
-    fonction: 'Rédacteur web',
-    cover: cover,
-  },
-
-  {
-    id: '002',
-    review:
-      "WebGrowth m'a permis de convertir plus de 100 prospects en un mois.",
-    name: 'Précieux TOSSOU',
-    fonction: 'Rédacteur web',
-    cover: cover,
-  },
-
-  {
-    id: '03',
-    review:
-      "WebGrowth m'a permis de convertir plus de 100 prospects en un mois.",
-    name: 'Précieux TOSSOU',
-    fonction: 'Rédacteur web',
-    cover: cover,
-  },
-
-  {
-    id: '102',
-    review:
-      "WebGrowth m'a permis de convertir plus de 100 prospects en un mois.",
-    name: 'Précieux TOSSOU',
-    fonction: 'Rédacteur web',
-    cover: cover,
-  },
-
-  {
-    id: '31010',
-    review:
-      "WebGrowth m'a permis de convertir plus de 100 prospects en un mois.",
-    name: 'Précieux TOSSOU',
-    fonction: 'Rédacteur web',
+    name: 'Hanane ADOGONI',
+    fonction: 'Fondateur SOCIALFAH',
     cover: cover,
   },
 ]
@@ -293,8 +304,7 @@ const question2 = () => {
       pour discuter plus en profondeur et vous proposer des solutions
       appropriées pour atteindre vos objectifs. Que ce soit pour{' '}
       <Important>la charte graphique</Important>,{' '}
-      <Important>le design graphique</Important> ou{' '}
-      <Important>les contenus</Important>,{' '}
+      <Important>le design</Important> ou <Important>les contenus</Important>,{' '}
       <Important>nous nous occupons de tout</Important>.
       <br />
       <br />
@@ -337,9 +347,9 @@ const question4 = () => {
       <br />
       <br />
       Comme outils utilisés nous avons les langages tels que :
-      <Important>JavaScript</Important> , <Important>HTML 5</Important>,{' '}
-      <Important>CSS 3</Important>, <Important>PHP</Important>,{' '}
-      <Important>MySql</Important> et les frameworks comme{' '}
+      <Important> JavaScript</Important>, <Important>HTML 5</Important>,
+      <Important> CSS 3</Important>, <Important>PHP</Important>,
+      <Important> MySql</Important> et les frameworks comme{' '}
       <Important>React Js</Important>, <Important>Laravel</Important>, pour ne
       citer qu’eux.
     </>
@@ -353,9 +363,10 @@ const question6 = () => {
       points :
       <ul>
         <li>
-          <Important>Les contenus (textes, images, etc.)</Important> : ils
-          seront réalisés avec soin et optimisés conformément aux exigences
-          actuelles dans le domaine de façon à booster votre référencement.
+          <Important>Les contenus </Important> ({' '}
+          <Important>textes, images</Important>, etc.) : ils seront réalisés
+          avec soin et optimisés conformément aux exigences actuelles dans le
+          domaine de façon à booster votre référencement.
         </li>
 
         <li>
@@ -365,8 +376,8 @@ const question6 = () => {
         </li>
 
         <li>
-          <Important>Liens externes</Important> : l’échange de ceux-ci avec
-          votre site sera
+          <Important>Liens externes</Important> : Facilité l’échange de ceux-ci
+          avec votre site sera.
         </li>
       </ul>
     </>
@@ -397,7 +408,7 @@ const question8 = () => {
       prestation. Jusqu’à ce que vous soyez{' '}
       <Important>satisfait à 100%</Important>, toutes les retouches sont
       comprises dans la prestation. Même pas un centime vous sera facturé de
-      plus
+      plus.
     </>
   )
 }

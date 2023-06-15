@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rdv } from '../data'
 
 function HoverContent({ paragraph }) {
   const Button = styled.a`
@@ -10,7 +11,7 @@ function HoverContent({ paragraph }) {
     border-radius: 10px;
     font-weight: 500;
     text-decoration: none;
-    margin-top: 10%;
+    margin-top: 5%;
     &:hover {
       background-color: #ffce07;
     }
@@ -24,6 +25,18 @@ function HoverContent({ paragraph }) {
     font-size: 1em;
     font-weight: 400;
     text-align: justify;
+    @media (min-width: 320px) {
+      font-size: 0.9em;
+    }
+    @media (min-width: 1024px) {
+      font-size: 1.1em;
+    }
+    @media (min-width: 1440px) {
+      font-size: 1.3em;
+    }
+    @media (min-width: 2560px) {
+      font-size: 1.5em;
+    }
   `
 
   return (
@@ -33,7 +46,7 @@ function HoverContent({ paragraph }) {
 
         <Button
           className="col-md-10 col-lg-8 text-center"
-          href="https://calendly.com/webgrowthservice/call-de-decouverte"
+          href={rdv}
           target="_blank"
         >
           Obtenir un devis personnalisé

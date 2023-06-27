@@ -56,7 +56,8 @@ function Why() {
       <div>
         {whyElements.map(({ number, text }) => (
           <Paragraph key={number}>
-            <Pourcentage>+{number}%</Pourcentage> {text}
+            <Pourcentage>Plus de {number}%</Pourcentage> {text}
+            {number === 83 && <Pourcentage>période post-covid.</Pourcentage>}
           </Paragraph>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import Interface from '../assets/interface.png'
+import Interface from '../assets/untils/interface.png'
 
 function Inteface() {
   const InterfaceDiv = styled.div`
@@ -8,7 +8,7 @@ function Inteface() {
     top: 20%;
     left: 83%;
     @media (min-width: 768px) {
-      top: 25%;
+      top: 10%;
       left: 89%;
     }
     @media (min-width: 1024px) {

@@ -39,7 +39,7 @@ function Goal() {
   const Paragraph = styled.p`
     font-weight: medium;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 30px;
   `
 
   const Gras = styled.span`
@@ -54,11 +54,15 @@ function Goal() {
 
         <div>
           <Paragraph>
-            Notre <Gras>objectif</Gras> chez WebGrowth est de nous assurer que
-            cet investissement que vous réalisez pour votre projet soit le plus
-            rentable possible pour votre image de marque, votre présence en
-            ligne et votre audience grâce à un site internet{' '}
-            <Gras>ergonomique, fluide et unique</Gras>.
+            Notre <Gras>objectif</Gras> est de fournir des solutions web de
+            <Gras> haute qualité</Gras>, répondant aux besoins spécifiques de
+            nos clients. Nous mettons l'accent sur l'utilisation des dernières
+            technologies et des meilleures pratiques du secteur pour garantir
+            des <Gras>résultats performants</Gras> et <Gras>esthétiques</Gras>.
+            Grâce à une collaboration étroite et un accompagnement personnalisé,
+            nous visons à offrir une expérience fluide et satisfaisante, en
+            réalisant les projets de nos clients selon leurs exigences
+            spécifiques.
           </Paragraph>
         </div>
       </GoalSection>

@@ -101,6 +101,35 @@ function Reviews() {
 
   const Review = styled.p`
     font-style: italic;
+    height: 150px;
+
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #121234;
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #121234;
+    }
+
+    @media (min-width: 375px) {
+      height: 150px;
+    }
+    @media (min-width: 1024px) {
+      height: 110px;
+    }
+    @media (min-width: 1360px) {
+      height: 120px;
+    }
   `
   return (
     <React.Fragment>
@@ -117,7 +146,7 @@ function Reviews() {
               {reviewsElements.map(({ id, review, name, fonction, cover }) => (
                 <div key={id}>
                   <ReviewDiv>
-                    <Review>"{review}"</Review>
+                    <Review id={id}>"{review}"</Review>
                     <div className="row align-items-center">
                       <div className="col-5 col-md-4 col-lg-3">
                         <Cover src={cover} alt={id} />

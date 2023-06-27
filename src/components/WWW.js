@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import www from '../assets/www.png'
+import www from '../assets/untils/www.png'
 
 function WWW() {
   const WWWDiv = styled.div`

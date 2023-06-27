@@ -5,14 +5,14 @@ import Achievements from './Achievements'
 function LatestAchievements() {
   const AchievementsSections = styled.section`
     @media (min-width: 320px) {
-      margin: 20% 0 20% 0;
+      margin: 15% 0 0% 0;
     }
 
     @media (min-width: 768px) {
-      margin: 10% 0 10% 0;
-    }
-    @media (min-width: 1024px) {
       margin: 10% 0 0% 0;
+    }
+    @media (min-width: 992px) {
+      margin: 5% 0 0% 0;
     }
   `
   const Header = styled.h1`

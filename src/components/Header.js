@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { navigationElements, rdv } from '../data'
+import logo from '../assets/logo.png'
 
 function Header() {
   /*const handleAnchorClick = (event, anchorId) => {
@@ -17,7 +18,6 @@ function Header() {
     color: white;
     position: sticky;
     top: 0;
-
     z-index: 3;
     @media (min-width: 320px) {
       padding: 8% 0 8% 0;
@@ -42,29 +42,18 @@ function Header() {
     }
   `
 
-  const BrandLink = styled.a`
-    color: white;
-    margin-right: 25%;
-    @media (min-width: 320px) {
-      margin-right: 5%;
-    }
-    @media (min-width: 1360px) {
-      margin-right: 18%;
-    }
-    @media (min-width: 1440px) {
-      margin-right: 25%;
-    }
+  const BrandLink = styled.a``
+
+  const Brand = styled.img`
+    width: 100%;
   `
-
-  const Brand = styled.h1`
-    .web {
-      color: white;
-      font-weight: bold;
+  const Icone = styled.i`
+    color: white;
+    @media (min-width: 320px) {
+      font-size: 2.5em;
     }
-
-    .growth {
-      color: #ffce07;
-      font-weight: bold;
+    @media (min-width: 375px) {
+      font-size: 3em;
     }
   `
 
@@ -120,12 +109,6 @@ function Header() {
     }
   `
 
-  const Icone = styled.i`
-    color: white;
-    @media (min-width: 320px) {
-      font-size: 3em;
-    }
-  `
   return (
     <React.Fragment>
       <Navigation className="row">
@@ -133,11 +116,11 @@ function Header() {
           <div className="container">
             <nav className="row navbar navbar-expand-lg">
               <div className="container-fluid">
-                <BrandLink className="navbar-brand" href="#">
-                  <Brand>
-                    <span className="web">WEB</span>
-                    <span className="growth">GROWTH</span>
-                  </Brand>
+                <BrandLink
+                  className="navbar-brand col-8 col-md-5 col-lg-3 "
+                  href="#"
+                >
+                  <Brand src={logo} alt="webgrowth-logo" className="" />
                 </BrandLink>
 
                 <Icone
@@ -153,7 +136,7 @@ function Header() {
                   className="collapse navbar-collapse "
                   id="navbarSupportedContent"
                 >
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0 col-md-8 col-lg-9 col-xl-8 ">
+                  <ul className="navbar-nav ms-lg-auto mb-2 mb-lg-0 col-md-8 offset-lg-1 col-xl-7 col-xxl-6  ">
                     {navigationElements.map(({ id, title, href }) => (
                       <ListItems className="nav-item" key={id}>
                         <ListItemsLink
@@ -168,7 +151,7 @@ function Header() {
                     ))}
                   </ul>
 
-                  <CallDiv className="col-md col-lg-3 row justify-content-lg-center ">
+                  <CallDiv className="col-md col-lg-3  row justify-content-lg-center ">
                     <Call
                       className="col-8 col-md-4 col-lg-12 text-center"
                       href={rdv}

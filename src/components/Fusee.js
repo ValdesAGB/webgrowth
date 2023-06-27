@@ -1,15 +1,15 @@
 import React from 'react'
-import fusee from '../assets/fusee.png'
-import styled, { keyframes } from 'styled-components'
+import fusee from '../assets/untils/fusee.png'
+import styled from 'styled-components'
 
 function Fusee() {
   const FuseeDivContainer = styled.div`
     position: absolute;
-
     border-radius: 50%;
+
     @media (min-width: 768px) {
-      top: 50%;
-      left: 0%;
+      top: 45%;
+      left: -5%;
       width: 120px;
       height: 120px;
     }

@@ -1,15 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { rdv } from '../data'
 
 function OffresSm({ id, offre, paragraph }) {
-  /* const [isContentOpen, setIsContentOpen] = useState(false)
-  const paragraphRef = useRef(null)
-
-  const toggleContent = (state) => {
-    setIsContentOpen(state)
-  }*/
-
   const OffreContainer = styled.div`
     background-color: #121234;
     display: flex;
@@ -27,6 +20,9 @@ function OffresSm({ id, offre, paragraph }) {
 
   const Content = styled.div`
     margin-bottom: 5%;
+    padding-bottom: 5%;
+    max-height: 200px;
+    overflow: scroll;
   `
 
   const Paragraph = styled.p`
@@ -42,7 +38,7 @@ function OffresSm({ id, offre, paragraph }) {
     color: #121234;
     background-color: #ffce07;
     border: none;
-    padding: 2% 4% 2% 4%;
+    padding: 2% 4% 3% 4%;
     border-radius: 5px;
     font-weight: 500;
     text-decoration: none;
@@ -53,39 +49,15 @@ function OffresSm({ id, offre, paragraph }) {
     &:active {
       background-color: #ffce07;
     }
+    &.disabled {
+      pointer-events: none; /* Empêche les interactions avec le bouton */
+      opacity: 0.6; /* Opacité réduite pour indiquer que le bouton est désactivé */
+    }
   `
 
   const Icone = styled.i`
     color: #ffce07;
   `
-
-  /*useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Ratio de visibilité du paragraphe dans la fenêtre d'affichage
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          toggleContent(true)
-        } else {
-          toggleContent(false)
-        }
-      })
-    }, options)
-
-    if (paragraphRef.current) {
-      observer.observe(paragraphRef.current)
-    }
-
-    return () => {
-      if (paragraphRef.current) {
-        observer.unobserve(paragraphRef.current)
-      }
-    }
-  }, [])*/
 
   return (
     <React.Fragment>
@@ -97,7 +69,7 @@ function OffresSm({ id, offre, paragraph }) {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
           >
-            {offre}
+            {id === 'commerce' ? offre + ' (coming soon 🚀)' : offre}
           </Offre>
 
           <Icone
@@ -112,7 +84,9 @@ function OffresSm({ id, offre, paragraph }) {
           <Content className="collapse navbar-collapse" id={id}>
             <Paragraph>{paragraph}</Paragraph>
             <Button
-              className="col-md-10 col-lg-8 text-center"
+              className={`col-md-10 col-lg-8 text-center  ${
+                id === 'commerce' ? 'disabled' : ''
+              }`}
               href={rdv}
               target="_blank"
             >

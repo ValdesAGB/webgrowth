@@ -1,10 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import styled, { keyframes } from 'styled-components'
-import Inteface from './Inteface'
-import WWW from './WWW'
-import Fusee from './Fusee'
-import Lampe from './Lampe'
+import Decoration from './Decoration'
 
 function Welcome() {
   const fadeInDown = keyframes`
@@ -32,7 +29,8 @@ function Welcome() {
   const WelcomeSection = styled.section`
     position: relative;
     padding: 5% 0 2% 0;
-    @media (min-width: 1360px) {
+
+    @media (min-width: 1024px) {
       margin-bottom: 2%;
     }
 
@@ -104,21 +102,21 @@ function Welcome() {
           <div className="row justify-content-center ">
             <div className="col-md-7">
               <UpperTitle>
-                Parce que votre PME a besoin de visibilité et de crédibilité
+                Parce que vous avez a besoin de visibilité et de crédibilité
                 pour grandir...
               </UpperTitle>
             </div>
             <div className="col-md-10 col-lg-8">
               <MainTitle>
-                Nous réalisons des sites web sur mesure pour votre PME.
+                Nous réalisons LE site web sur mesure pour votre PME.
               </MainTitle>
             </div>
             <div className="col-md-9 col-lg-7">
               <SubTitle>
-                Renforcer votre présence en ligne avec un site web
-                <Bold> attractif</Bold> et <Bold>dynamique</Bold> pour saisir
-                des
-                <Bold> opportunités commerciales.</Bold>
+                Renforcez votre présence en ligne avec un site web
+                <Bold> attractif</Bold> et
+                <Bold> dynamique</Bold> pour saisir toutes les
+                <Bold> opportunités à votre portée</Bold>.
               </SubTitle>
             </div>
             <div className=" row  justify-content-center">
@@ -129,17 +127,10 @@ function Welcome() {
           </div>
         </div>
 
-        <Inteface />
-        <WWW />
-        <Fusee />
-        <Lampe />
+        <Decoration />
       </WelcomeSection>
     </React.Fragment>
   )
 }
 
 export default Welcome
-/**            <CoverLampe leftSide={true} src={lampe} alt="idee" />
-
-            <CoverLampe src={lampe} alt="idee" />
- */

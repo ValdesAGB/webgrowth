@@ -6,12 +6,6 @@ import OffreMd from './OffreMd'
 import OffresSm from './OffresSm'
 
 function Offres() {
-  const para = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. `
-
   const TitleContainer = styled.div`
     margin: 10% 0 5% 0;
   `
@@ -46,6 +40,7 @@ function Offres() {
           {offresElements.map(({ id, offre, cover, right, text }) => (
             <OffresContainer key={id} className="row">
               <OffreMd
+                id={id}
                 side={right}
                 offre={offre}
                 cover={cover}

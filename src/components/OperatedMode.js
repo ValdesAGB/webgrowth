@@ -12,7 +12,7 @@ function OperatedMode() {
 
   const OperatedDiv = styled.div`
     background-color: #d9d9d9;
-    @media (max-width: 425px) {
+    @media (max-width: 767px) {
       background-color: transparent;
     }
     border-radius: 20px;
@@ -117,8 +117,10 @@ function OperatedMode() {
                     <Title>{title}</Title>
                     <Paragraph>
                       {paragraph}{' '}
-                      {id === '01' && (
-                        <span className="fw-bold">satisfaction à 100%.</span>
+                      {id === '01' ? (
+                        <span className="fw-bold">satisfaction totale.</span>
+                      ) : (
+                        id === '05' && <span className="fw-bold">18 mois.</span>
                       )}
                     </Paragraph>
                     {id !== '05' && (

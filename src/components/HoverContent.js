@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { rdv } from '../data'
 
-function HoverContent({ paragraph }) {
+function HoverContent({ id, paragraph }) {
   const Button = styled.a`
     color: #121234;
     background-color: #ffce07;
@@ -17,6 +17,10 @@ function HoverContent({ paragraph }) {
     }
     &:active {
       background-color: #ffce07;
+    }
+    &.disabled {
+      pointer-events: none; /* Empêche les interactions avec le bouton */
+      opacity: 0.6; /* Opacité réduite pour indiquer que le bouton est désactivé */
     }
   `
 
@@ -45,7 +49,9 @@ function HoverContent({ paragraph }) {
         <Paragraph className=" col-12">{paragraph}</Paragraph>
 
         <Button
-          className="col-md-10 col-lg-8 text-center"
+          className={`col-md-10 col-lg-8 text-center  ${
+            id === 'commerce' ? 'disabled' : ''
+          }`}
           href={rdv}
           target="_blank"
         >

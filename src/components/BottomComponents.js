@@ -53,7 +53,7 @@ function BottomComponents() {
     <React.Fragment>
       <section>
         <div className="container text-center">
-          <Header>Alors Prêt à vous lancer ?</Header>
+          <Header>Alors prêt à se lancer ?</Header>
           <SubTitle>Obtenez votre devis personnalisé dès à présent.</SubTitle>
           <div className="row justify-content-center">
             <Button col={'col-md-6 col-lg-3'} />
@@ -61,7 +61,7 @@ function BottomComponents() {
           <div className="row justify-content-center mt-4">
             <Paragraph className=" col-lg-8">
               Faites le premier pas vers la réalisation de votre site web en
-              nous contactant aujourd'hui.
+              nous contactant dès maintenant.!
             </Paragraph>
           </div>
         </div>

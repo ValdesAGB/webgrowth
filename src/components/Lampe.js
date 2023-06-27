@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import idee from '../assets/idee.png'
-import lampe from '../assets/lampe.png'
+import idee from '../assets/untils/idee.png'
+import lampe from '../assets/untils/lampe.png'
 function Lampe() {
   const LampeDivContainer = styled.div`
     position: absolute;

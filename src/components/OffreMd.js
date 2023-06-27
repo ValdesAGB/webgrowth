@@ -1,27 +1,8 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import HoverContent from './HoverContent'
 
-function OffreMd({ side, offre, cover, paragraph, OffresContainer }) {
-  const ScrollbarStyles = createGlobalStyle`
-  /* Barre de défilement personnalisée */
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #121234;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #121234;
-  }
-`
-
+function OffreMd({ id, side, offre, cover, paragraph, OffresContainer }) {
   const Offre = styled.div`
     background-color: ${(props) =>
       props.side !== true ? '#121234' : '#11121E'};
@@ -91,13 +72,16 @@ function OffreMd({ side, offre, cover, paragraph, OffresContainer }) {
       {!side ? (
         <>
           <Offre side={side} className="col d-none d-md-flex">
-            <h1 className="text-center">{offre}</h1>
+            <h1 className="text-center">
+              {' '}
+              {id === 'commerce' ? offre + ' (coming soon 🚀)' : offre}
+            </h1>
             <Icone side={side} className="bi bi-arrow-right-circle-fill" />
           </Offre>
           <CoverContainer className="col d-none d-md-flex ">
             <Cover src={cover} alt={offre} className="w-100" />
             <Hover sides={side}>
-              <HoverContent paragraph={paragraph} />
+              <HoverContent id={id} paragraph={paragraph} />
             </Hover>
           </CoverContainer>
         </>
@@ -106,7 +90,7 @@ function OffreMd({ side, offre, cover, paragraph, OffresContainer }) {
           <CoverContainer className="col  d-none d-md-flex">
             <Cover src={cover} alt={offre} className="w-100" />
             <Hover sides={side}>
-              <HoverContent paragraph={paragraph} />
+              <HoverContent id={id} paragraph={paragraph} />
             </Hover>
           </CoverContainer>
           <Offre side={side} className="col d-none d-md-flex">

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { WebGrowth } from '../data'
 
 function How() {
   const HowSection = styled.section`
@@ -17,7 +18,7 @@ function How() {
       margin: 5% 0 5% 0;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       margin: 0 2% 0 2%;
     }
   `
@@ -48,7 +49,7 @@ function How() {
   const Paragraph = styled.p`
     font-weight: medium;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 30px;
   `
 
   const Gras = styled.span`
@@ -63,12 +64,16 @@ function How() {
 
         <div>
           <Paragraph>
-            Avec son service <Gras>All in One</Gras>, <Gras>WebGrowth</Gras>{' '}
-            vous offre un service complet ayant pour but de vous fournir un
-            produit fini de votre projet tout en garantissant votre{' '}
-            <Gras>satisfaction à 100%</Gras>. Cela dans le but de vous permettre
-            de vous consacrer entièrement sur les autres tâches les plus
-            importantes pour vous.
+            {WebGrowth()} offre un service <Gras>All in One</Gras> pour
+            accompagner nos clients à chaque étape de leur projet de
+            développement web. De la <Gras>consultation initiale</Gras> à la{' '}
+            <Gras>réalisation complète</Gras>, notre{' '}
+            <Gras>équipe expérimentée</Gras> crée des solutions personnalisées
+            en utilisant les{' '}
+            <Gras>technologies les plus avancées de l’industrie</Gras>. Nous
+            nous engageons à collaborer étroitement avec nos clients, en
+            fournissant des mises à jour régulières et en apportant des
+            ajustements selon leurs besoins.
           </Paragraph>
         </div>
       </HowSection>

@@ -2,34 +2,38 @@ import React from 'react'
 import styled from 'styled-components'
 import Contact from './Contact'
 import Slogan from './Slogan'
+import { colors } from '../untils/colors'
+import { polices } from '../untils/polices'
 
+const FooterSection = styled.section`
+  background-color: ${colors.main};
+  font-family: ${polices.second};
+  color: white;
+  font-size: 14px;
+`
+
+const Container = styled.div`
+  text-align: center;
+`
+
+const Content = styled.div`
+  justify-items: center;
+  align-items: center;
+`
 function Footer() {
-  const FooterSection = styled.section`
-    background-color: #121234;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-
-    font-size: 14px;
-  `
-
-  const Container = styled.div`
-    justify-items: center;
-    align-items: center;
-  `
-
   return (
     <React.Fragment>
       <FooterSection className="row">
         <div>
-          <div className="container text-center">
+          <Container className="container">
             <div className="row justify-content-center align-items-center">
-              <Container className="col-12 row">
+              <Content className="col-12 row">
                 <Slogan />
 
                 <Contact />
-              </Container>
+              </Content>
             </div>
-          </div>
+          </Container>
         </div>
       </FooterSection>
     </React.Fragment>

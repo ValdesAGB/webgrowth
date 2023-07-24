@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { faqElements } from '../data'
+import { polices } from '../untils/polices'
+import { colors } from '../untils/colors'
 
 const slideDown = keyframes`
   0% {
@@ -25,6 +27,100 @@ const slideUp = keyframes`
   }
 `
 
+const FAQSection = styled.section`
+  padding-top: 15%;
+  padding-bottom: 15%;
+
+  @media (min-width: 576px) {
+    padding-bottom: 10%;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+`
+
+const Header = styled.h1`
+  font-family: ${polices.second};
+  font-weight: bold;
+  font-size: 24px;
+  margin: 7% 0;
+  text-align: center;
+  margin-bottom: 10%;
+
+  @media (min-width: 768px) {
+    margin-bottom: 5%;
+  }
+`
+
+const Container = styled.div`
+  text-align: center;
+  position: relative;
+  margin: 5% 0;
+  @media (min-width: 768px) {
+    margin: 3% 0;
+  }
+`
+
+const Question = styled.div`
+  font-family: ${polices.second};
+  background-color: ${colors.tertiary};
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  padding: 0 5%;
+`
+
+const IconeDiv = styled.div`
+  color: white;
+`
+
+const QuestionButton = styled.p`
+  font-weight: 400;
+  font-size: 0.95em;
+  color: white;
+  padding: 2% 0.5% 0 0.5%;
+`
+
+const AnswerContainer = styled.div`
+  position: relative;
+  z-index: 0;
+  background-color: ${colors.main};
+  color: white;
+  text-align: justify;
+
+  animation: ${(props) => (props.active ? slideDown : slideUp)} 0.5s forwards;
+
+  border-radius: 5px;
+
+  top: -10px;
+  padding-top: ${(props) => (props.active ? '5%' : 0)};
+  max-height: ${(props) => (props.active ? '500px' : '0')};
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${colors.webkitScrollbarTrackBgColor};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.tertiary};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${colors.tertiary};
+  }
+`
+
+const Answer = styled.div`
+  font-family: ${polices.noSerif};
+  margin-top: 5px;
+  margin-bottom: 5%;
+`
 function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null)
 
@@ -35,25 +131,16 @@ function FAQ() {
       setActiveIndex(index)
     }
   }
-  const Header = styled.h1`
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 7% 0 7% 0;
-    @media (min-width: 320px) {
-      margin: 10% 0 10% 0;
-    }
-  `
 
   return (
     <React.Fragment>
       <FAQSection id="faq">
         <div className="container">
-          <div className="row justify-content-center text-center">
+          <div className="row justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-6">
               <Header>Questions fréquemment posés</Header>
               {faqElements.map((item, index) => (
-                <DivAll key={index}>
+                <Container key={index}>
                   <Question
                     className="row align-items-center"
                     onClick={() => toggleQuestion(index)}
@@ -62,7 +149,7 @@ function FAQ() {
                       {item.question}
                     </QuestionButton>
                     <IconeDiv className="col-1">
-                      <Icone
+                      <i
                         className={`bi ${
                           activeIndex === index
                             ? 'bi-caret-up-fill'
@@ -77,7 +164,7 @@ function FAQ() {
                   >
                     <Answer>{item.answer}</Answer>
                   </AnswerContainer>
-                </DivAll>
+                </Container>
               ))}
             </div>
           </div>
@@ -86,91 +173,5 @@ function FAQ() {
     </React.Fragment>
   )
 }
-
-const FAQSection = styled.section`
-  margin: 5% 0 2% 0;
-  @media (min-width: 1440px) {
-    margin: 2% 0 2% 0;
-  }
-`
-const DivAll = styled.div`
-  position: relative;
-  margin: 7% 0 7% 0;
-  @media (min-width: 768px) {
-    margin: 2% 0 2% 0;
-  }
-`
-
-const IconeDiv = styled.div`
-  color: white;
-`
-
-const Icone = styled.i`
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-`
-
-const Question = styled.div`
-  background-color: #11121e;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  @media (min-width: 320px) {
-    padding: 0 5% 0 5%;
-  }
-`
-
-const QuestionButton = styled.p`
-  font-weight: 400;
-  font-size: 0.95em;
-  color: white;
-  padding: 2% 0.5% 0 0.5%;
-`
-
-const AnswerContainer = styled.div`
-  position: relative;
-  z-index: 1;
-  background-color: #121234;
-  color: white;
-  text-align: justify;
-  opacity: ${(props) => (props.active ? 1 : 0)};
-  animation: ${(props) => (props.active ? slideDown : slideUp)} 0.5s forwards;
-  margin-bottom: 2%;
-  border-radius: 10px;
-  @media (min-width: 320px) {
-    top: -10px;
-    padding: ${(props) => (props.active ? '10% 0% 0% 0%' : 0)};
-    max-height: ${(props) => (props.active ? '500px' : '0')};
-    overflow-y: scroll;
-  }
-  @media (min-width: 375px) {
-    padding: ${(props) => (props.active ? '5% 0% 0% 0%' : 0)};
-  }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #11121e;
-    border-radius: 20px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #11121e;
-  }
-`
-
-const Answer = styled.div`
-  font-family: 'Roboto', sans-serif;
-  margin-top: 5px;
-  margin-bottom: 6%;
-  font-weight: 300;
-`
 
 export default FAQ

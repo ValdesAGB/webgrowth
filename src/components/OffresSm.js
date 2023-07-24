@@ -1,67 +1,86 @@
 import React from 'react'
 import styled from 'styled-components'
 import { rdv } from '../data'
+import { colors } from '../untils/colors'
+import { polices } from '../untils/polices'
+
+const OffreContainer = styled.div`
+  background-color: ${colors.main};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+`
+
+const Offre = styled.div`
+  color: ${colors.second};
+  padding: 2% 0;
+  font-family: ${polices.second};
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-family: ${polices.main};
+    font-weight: 600;
+  }
+`
+
+const Content = styled.div`
+  padding-bottom: 5%;
+  height: 300px;
+
+  @media (min-width: 576px) {
+    text-align: center;
+  }
+`
+
+const Paragraph = styled.p`
+  padding-top: 5%;
+  padding-bottom: 2%;
+  color: white;
+  border-top: solid 1px red;
+  margin-bottom: 20px;
+  font-family: ${polices.noSerif};
+  font-size: 0.9em;
+  overflow: auto;
+
+  height: 85%;
+
+  @media (min-width: 576px) {
+    height: 88%;
+  }
+`
+
+const Button = styled.a`
+  color: ${colors.main};
+  background-color: ${colors.second};
+  border: none;
+  padding: 2% 4% 3% 4%;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    background-color: ${colors.second};
+  }
+  &:focus {
+    background-color: ${colors.second};
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+`
+
+const Icone = styled.i`
+  color: ${colors.second};
+`
 
 function OffresSm({ id, offre, paragraph }) {
-  const OffreContainer = styled.div`
-    background-color: #121234;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  `
-
-  const Offre = styled.div`
-    font-family: 'Roboto', sans-serif;
-    color: #ffce07;
-    padding: 2% 0 2% 0;
-    font-weight: 500;
-  `
-
-  const Content = styled.div`
-    margin-bottom: 5%;
-    padding-bottom: 5%;
-    max-height: 200px;
-    overflow: scroll;
-  `
-
-  const Paragraph = styled.p`
-    padding-top: 5%;
-    color: white;
-    border-top: solid 1px red;
-    margin-bottom: 20px;
-    font-family: 'Montserrat;', sans-serif;
-    font-size: 0.9em;
-  `
-
-  const Button = styled.a`
-    color: #121234;
-    background-color: #ffce07;
-    border: none;
-    padding: 2% 4% 3% 4%;
-    border-radius: 5px;
-    font-weight: 500;
-    text-decoration: none;
-
-    &:hover {
-      background-color: #ffce07;
-    }
-    &:active {
-      background-color: #ffce07;
-    }
-    &.disabled {
-      pointer-events: none; /* Empêche les interactions avec le bouton */
-      opacity: 0.6; /* Opacité réduite pour indiquer que le bouton est désactivé */
-    }
-  `
-
-  const Icone = styled.i`
-    color: #ffce07;
-  `
-
   return (
     <React.Fragment>
-      <OffreContainer className="navbar navbar-expand-lg d-md-none">
+      <OffreContainer className=" col-md-11 navbar navbar-expand-lg">
         <div className="container">
           <Offre
             data-bs-toggle="collapse"
@@ -83,8 +102,9 @@ function OffresSm({ id, offre, paragraph }) {
 
           <Content className="collapse navbar-collapse" id={id}>
             <Paragraph>{paragraph}</Paragraph>
+
             <Button
-              className={`col-md-10 col-lg-8 text-center  ${
+              className={`col-md-10 col-lg-8 ${
                 id === 'commerce' ? 'disabled' : ''
               }`}
               href={rdv}
@@ -100,4 +120,3 @@ function OffresSm({ id, offre, paragraph }) {
 }
 
 export default OffresSm
-/** <Paragraph ref={paragraphRef}>{para}</Paragraph> */

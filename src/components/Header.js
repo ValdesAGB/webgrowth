@@ -2,113 +2,111 @@ import React from 'react'
 import styled from 'styled-components'
 import { navigationElements, rdv } from '../data'
 import logo from '../assets/logo.png'
+import { colors } from '../untils/colors'
+import { polices } from '../untils/polices'
+
+const Navigation = styled.section`
+  background-color: ${colors.main};
+  font-family: ${polices.second};
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  padding-top: 8%;
+  padding-bottom: 8%;
+
+  @media (min-width: 576px) {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+`
+
+const Brand = styled.img`
+  width: 100%;
+`
+
+const Icone = styled.i`
+  color: white;
+
+  font-size: 2.5em;
+
+  @media (min-width: 576px) {
+    font-size: 3em;
+  }
+`
+
+const List = styled.ul`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  @media (min-width: 992px) {
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+`
+
+const ListItems = styled.li`
+  color: white;
+`
+
+const ListItemsLink = styled.a`
+  color: ${(props) => (props.ids !== 'accueil' ? 'white' : colors.second)};
+  &:hover {
+    color: ${colors.second};
+  }
+
+  &:focus {
+    color: ${colors.second};
+  }
+`
+
+const Call = styled.a`
+  color: ${colors.main};
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 500;
+
+  background-color: ${colors.second};
+  &:hover {
+    background-color: ${colors.second};
+  }
+  &:focus {
+    background-color: ${colors.second};
+  }
+
+  padding: 3%;
+
+  @media (min-width: 768px) {
+    padding: 2%;
+  }
+
+  @media (min-width: 992px) {
+    padding: 4%;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 5%;
+  }
+
+  @media (min-width: 1400px) {
+    padding: 3%;
+  }
+`
 
 function Header() {
-  /*const handleAnchorClick = (event, anchorId) => {
-    event.preventDefault()
-    const anchorElement = document.getElementById(anchorId)
-    if (anchorElement) {
-      anchorElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }*/
-
-  const Navigation = styled.section`
-    background-color: #121234;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    @media (min-width: 320px) {
-      padding: 8% 0 8% 0;
-      margin-bottom: 3%;
-    }
-
-    @media (min-width: 425px) {
-      padding: 5% 0 5% 0;
-      margin-bottom: 2%;
-    }
-    @media (min-width: 768px) {
-      padding: 3% 0 3% 0;
-      margin-bottom: 1%;
-    }
-    @media (min-width: 1360px) {
-      padding: 2% 0 2% 0;
-      margin-bottom: 1%;
-    }
-
-    @media (min-width: 1360px) {
-      margin-bottom: 0%;
-    }
-  `
-
-  const BrandLink = styled.a``
-
-  const Brand = styled.img`
-    width: 100%;
-  `
-  const Icone = styled.i`
-    color: white;
-    @media (min-width: 320px) {
-      font-size: 2.5em;
-    }
-    @media (min-width: 375px) {
-      font-size: 3em;
-    }
-  `
-
-  const ListItems = styled.li`
-    color: white;
-  `
-
-  const ListItemsLink = styled.a`
-    color: ${(props) => (props.ids !== 'acceuil' ? 'white' : '#ffce07')};
-    &:hover {
-      color: #ffce07;
-    }
-
-    &:focus {
-      color: #ffce07;
-    }
-  `
-  const CallDiv = styled.div`
-    @media (min-width: 320px) {
-      margin-left: 0.25%;
-    }
-    @media (min-width: 768px) {
-      margin-left: 0%;
-    }
-  `
-
-  const Call = styled.a`
-    color: #121234;
-    background-color: #ffce07;
-    border: none;
-    text-decoration: none;
-
-    border-radius: 5px;
-    &:hover {
-      background-color: #ffce07;
-    }
-    &:active {
-      background-color: #ffce07;
-    }
-    font-weight: 500;
-
-    @media (min-width: 320px) {
-      padding: 3%;
-    }
-
-    @media (min-width: 768px) {
-      padding: 1%;
-      margin-left: 0%;
-    }
-
-    @media (min-width: 1024px) {
-      margin-left: 0%;
-    }
-  `
-
   return (
     <React.Fragment>
       <Navigation className="row">
@@ -116,12 +114,9 @@ function Header() {
           <div className="container">
             <nav className="row navbar navbar-expand-lg">
               <div className="container-fluid">
-                <BrandLink
-                  className="navbar-brand col-8 col-md-5 col-lg-3 "
-                  href="#"
-                >
-                  <Brand src={logo} alt="webgrowth-logo" className="" />
-                </BrandLink>
+                <a className="navbar-brand col-8 col-md-5 col-lg-3 " href="/">
+                  <Brand src={logo} alt="webgrowth-logo" />
+                </a>
 
                 <Icone
                   className="navbar-toggler bi bi-list"
@@ -136,30 +131,31 @@ function Header() {
                   className="collapse navbar-collapse "
                   id="navbarSupportedContent"
                 >
-                  <ul className="navbar-nav ms-lg-auto mb-2 mb-lg-0 col-md-8 offset-lg-1 col-xl-7 col-xxl-6  ">
+                  <List className="navbar-nav col-md-8 offset-lg-1 col-xl-7 col-xxl-6">
                     {navigationElements.map(({ id, title, href }) => (
                       <ListItems className="nav-item" key={id}>
                         <ListItemsLink
                           ids={id}
                           className={`nav-link ${id}`}
                           href={href}
-                          /* onClick={(event) => handleAnchorClick(event, id)}*/
                         >
                           {title}
                         </ListItemsLink>
                       </ListItems>
                     ))}
-                  </ul>
+                  </List>
 
-                  <CallDiv className="col-md col-lg-3  row justify-content-lg-center ">
-                    <Call
-                      className="col-8 col-md-4 col-lg-12 text-center"
-                      href={rdv}
-                      target="_blank"
-                    >
-                      Planifier un appel
-                    </Call>
-                  </CallDiv>
+                  <div className="col-md col-lg-3">
+                    <div className="row justify-content-center">
+                      <Call
+                        className="col-11 col-xl-10"
+                        href={rdv}
+                        target="_blank"
+                      >
+                        Planifier un appel
+                      </Call>
+                    </div>
+                  </div>
                 </div>
               </div>
             </nav>

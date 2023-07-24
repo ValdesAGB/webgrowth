@@ -1,38 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 import Achievements from './Achievements'
+import { polices } from '../untils/polices'
+
+const AchievementsSections = styled.section`
+  padding-top: 15%;
+  padding-bottom: 15%;
+
+  @media (min-width: 576px) {
+    padding-bottom: 10%;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .container {
+    text-align: center;
+  }
+`
+const Header = styled.h1`
+  font-family: ${polices.second};
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10%;
+
+  @media (min-width: 768px) {
+    margin-bottom: 5%;
+  }
+`
 
 function LatestAchievements() {
-  const AchievementsSections = styled.section`
-    @media (min-width: 320px) {
-      margin: 15% 0 0% 0;
-    }
-
-    @media (min-width: 768px) {
-      margin: 10% 0 0% 0;
-    }
-    @media (min-width: 992px) {
-      margin: 5% 0 0% 0;
-    }
-  `
-  const Header = styled.h1`
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-
-    @media (min-width: 320px) {
-      margin-bottom: 10%;
-    }
-    @media (min-width: 768px) {
-      margin-bottom: 5%;
-    }
-  `
-
   return (
     <React.Fragment>
       <AchievementsSections id="achievements">
         <div>
-          <div className="container text-center">
+          <div className="container">
             <Header>Nos Dernières Réalisations</Header>
             <div>
               <Achievements />

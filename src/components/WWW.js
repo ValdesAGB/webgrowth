@@ -2,51 +2,64 @@ import React from 'react'
 import styled from 'styled-components'
 import www from '../assets/untils/www.png'
 
-function WWW() {
-  const WWWDiv = styled.div`
-    position: absolute;
+const WWWDiv = styled.div`
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 80%;
+  left: 5%;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  @media (min-width: 992px) {
+    top: 75%;
+  }
+
+  @media (min-width: 2000px) {
     top: 70%;
-    left: 10%;
-    @media (min-width: 768px) {
-      top: 75%;
-      left: 5%;
-    }
+    left: 13%;
+  }
 
-    @media (min-width: 1024px) {
-      top: 75%;
-      left: 10%;
-    }
+  @media (min-width: 2560px) {
+    left: 20%;
+  }
+`
+const CoverWWW = styled.img`
+  transform: rotate(20deg);
+  transition: transform 1s cubic-bezier(1, 0, 0.06, 1);
+  ${WWWDiv}:hover & {
+    transform: rotate(2turn);
+  }
 
-    @media (min-width: 2560px) {
-      top: 80%;
-      left: 25%;
-    }
-    @media (min-width: 768px) {
-      top: 75%;
-      left: 5%;
-    }
+  width: 100%;
 
-    @media (min-width: 1024px) {
-      top: 75%;
-      left: 10%;
-    }
+  @media (min-width: 992px) {
+    width: 80%;
+  }
 
-    @media (min-width: 2560px) {
-      top: 80%;
-      left: 25%;
-    }
-  `
-  const CoverWWW = styled.img`
-    transform: rotate(-20deg);
+  @media (min-width: 1400px) {
     width: 75%;
-    transition: transform 1s;
-    ${WWWDiv}:hover & {
-      transform: rotate(0deg);
-    }
-  `
+  }
+
+  @media (min-width: 1600px) {
+    width: 70%;
+  }
+
+  @media (min-width: 2000px) {
+    width: 65%;
+  }
+
+  @media (min-width: 2560px) {
+    width: 50%;
+  }
+`
+
+function WWW() {
   return (
     <React.Fragment>
-      <WWWDiv className="col-md-2 col-lg-1 d-none d-lg-block">
+      <WWWDiv className="col-1">
         <CoverWWW src={www} alt="www" />
       </WWWDiv>
     </React.Fragment>

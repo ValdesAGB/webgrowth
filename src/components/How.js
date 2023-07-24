@@ -1,65 +1,67 @@
 import React from 'react'
 import styled from 'styled-components'
 import { WebGrowth } from '../data'
+import { colors } from '../untils/colors'
+import { polices } from '../untils/polices'
+
+const HowSection = styled.section`
+  padding: 2%;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: white;
+  transition: background-color 500ms 0.2s, box-shadow 600ms;
+  &:hover {
+    background-color: ${colors.second};
+    box-shadow: 0px 0px 10px ${colors.second};
+  }
+
+  @media (max-width: 767px) {
+    margin: 10% 0;
+  }
+
+  @media (min-width: 768px) {
+    margin: 5% 0;
+  }
+
+  @media (min-width: 992px) {
+    margin: 0 2%;
+  }
+`
+
+const Header = styled.h3`
+  font-weigth: bold;
+  font-size: 22px;
+  font-family: ${polices.second};
+  border-radius: 20px;
+  margin-bottom: 5%;
+  padding: 5%;
+  color: white;
+  background-color: ${colors.main};
+  transition: background-color 500ms, color 800ms;
+  ${HowSection}:hover & {
+    background-color: white;
+    color: black;
+  }
+`
+
+const Paragraph = styled.p`
+  font-weight: medium;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: ${polices.second};
+`
+
+const Gras = styled.span`
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+  font-family: ${polices.second};
+`
 
 function How() {
-  const HowSection = styled.section`
-    background-color: white;
-    padding: 2%;
-    border-radius: 20px;
-
-    transition: background-color 500ms, box-shadow 600ms;
-    &:hover {
-      background-color: #ffce07;
-      box-shadow: 0px 0px 10px #ffce07;
-      cursor: pointer;
-    }
-    @media (min-width: 320px) {
-      margin: 5% 0 5% 0;
-    }
-
-    @media (min-width: 992px) {
-      margin: 0 2% 0 2%;
-    }
-  `
-
-  const Header = styled.h3`
-    font-weigth: bold;
-    font-size: 22px;
-    border-radius: 20px;
-    color: white;
-    background-color: #121234;
-    padding: 5%;
-    transition: background-color 500ms, color 800ms;
-    ${HowSection}:hover & {
-      background-color: white;
-      color: black;
-    }
-    margin-bottom: 10%;
-    @media (min-width: 768px) {
-      margin-bottom: 4%;
-      padding: 3%;
-    }
-    @media (min-width: 1024px) {
-      margin-bottom: 4%;
-      padding: 5%;
-    }
-  `
-
-  const Paragraph = styled.p`
-    font-weight: medium;
-    font-size: 14px;
-    line-height: 30px;
-  `
-
-  const Gras = styled.span`
-    font-weight: bold;
-    font-size: 14px;
-    color: black;
-  `
   return (
     <React.Fragment>
-      <HowSection className="col-12 col-lg">
+      <HowSection className="col-12 col-sm-9 col-md-7 col-lg">
         <Header>Comment 👀</Header>
 
         <div>

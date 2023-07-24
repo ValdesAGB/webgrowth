@@ -1,168 +1,122 @@
 import React from 'react'
 import styled from 'styled-components'
-import { archivementsElements, rdv } from '../data'
+import { colors } from '../untils/colors'
+import { polices } from '../untils/polices'
 
-function AchievementsGrid() {
-  const Grid = styled.div`
-    display: grid;
-    @media (min-width: 320px) {
-      grid-template-columns: 100%;
-      grid-template-rows: auto;
-    }
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
+const Container = styled.div`
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+  }
+`
 
-      gap: 10px;
-    }
-  `
-  const GridElements = styled.div`
-    position: relative;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+`
 
-    grid-column: ${(props) =>
-      props.ids === 'legal'
-        ? ' 1 / 3'
-        : props.ids === 'rano'
-        ? '3/5'
-        : props.ids === 'lana'
-        ? '1/3'
-        : props.ids === 'carla'
-        ? '3/5'
-        : props.ids === 'myfreeworks'
-        ? '1/3'
-        : '3/5'};
+const GridElements = styled.div`
+  position: relative;
+  cursor: pointer;
 
-    @media (min-width: 320px) {
-      grid-column: 1/2;
-      margin-bottom: 5%;
-    }
+  grid-column: span 4;
+  margin-bottom: 5%;
 
-    @media (min-width: 1024px) {
-      grid-column: ${(props) =>
-        props.ids === 'legal'
-          ? ' 1 / 3'
-          : props.ids === 'rano'
-          ? '3/5'
-          : props.ids === 'lana'
-          ? '1/3'
-          : props.ids === 'carla'
-          ? '3/5'
-          : props.ids === 'myfreeworks'
-          ? '1/3'
-          : '3/5'};
+  @media (min-width: 1200px) {
+    grid-column: span 2;
+    margin-bottom: 2%;
+  }
 
-      margin-bottom: 2%;
-    }
-  `
+  img {
+    width: 100%;
+  }
+`
 
-  const Hover = styled.div`
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    opacity: 0;
-    max-height: 100%;
-    overflow-y: scroll;
-    transform: translateX(-10%);
-    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
+const Hover = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 400ms 0.2s, transform 400ms;
+  ${GridElements}:hover & {
+    background-color: ${colors.lastAchivementsGridsHoverBgColor};
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+const Paragraph = styled.p`
+  font-family: ${polices.second};
+  font-weight: 300;
+  color: white;
+  text-align: justify;
+  overflow: auto;
 
-    ::-webkit-scrollbar-thumb {
-      background: #11121e;
-      border-radius: 20px;
-    }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #11121e;
-    }
-    ${GridElements}:hover & {
-      background-color: rgba(0, 0, 0, 0.85);
-      opacity: 1;
-      transform: translateX(0%);
-    }
+  ::-webkit-scrollbar-track {
+    background: ${colors.webkitScrollbarTrackBgColor};
+  }
 
-    @media (max-width: 1360px) {
-      overflow: scroll;
-    }
-    @media (min-width: 320px) {
-      padding: 5%;
-    }
-    @media (min-width: 1360px) {
-      padding: 0;
-    }
-  `
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.tertiary};
+  }
 
-  const Paragraph = styled.p`
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: white;
-    text-align: justify;
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${colors.tertiary};
+  }
 
-    @media (min-width: 320px) {
-      padding: 2%;
-    }
-    @media (min-width: 1360px) {
-      padding: 5% 5% 2% 5%;
-    }
-  `
-  const GetButton = styled.a`
-    font-family: 'Roboto', sans-serif;
-    background-color: #121234;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: 400;
-    padding: 2%;
-    text-decoration: none;
-  `
+  max-height: 78%;
+  padding: 2%;
 
-  const ViewProjet = styled.a`
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffce07;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    font-weight: 500;
-    padding: 2%;
-    text-decoration: none;
+  @media (min-width: 1200px) {
+    max-height: 72%;
+    padding: 3% 4%;
+  }
+`
+const GetButton = styled.a`
+  font-family: ${polices.second};
+  background-color: ${colors.main};
+  color: white;
+  font-weight: 500;
+  padding: 2%;
+  text-decoration: none;
+`
 
-    @media (min-width: 320px) {
-      margin-bottom: 5%;
-    }
+const ViewProjet = styled.a`
+  font-family: ${polices.second};
+  background-color: ${colors.second};
+  color: black;
+  font-weight: 500;
+  padding: 2%;
+  text-decoration: none;
+`
 
-    @media (min-width: 768px) {
-      margin-bottom: 0%;
-      margin-right: 5%;
-    }
-  `
-
+function AchievementsGrid({ array, rdv }) {
   return (
     <React.Fragment>
-      <div className="d-none d-md-block">
+      <Container>
         <Grid>
-          {archivementsElements.map(({ id, description, cover, href }) => (
-            <GridElements ids={id} key={id} className=" align-items-center ">
-              <img src={cover} alt={id} className="w-100" />
+          {array.map(({ id, description, cover, href }) => (
+            <GridElements key={id}>
+              <img src={cover} alt={id} />
               <Hover>
                 <Paragraph>{description}</Paragraph>
-                <div className="row justify-content-center align-items-center mx-1 mb-3">
-                  <ViewProjet
-                    href={href}
-                    target="_blank"
-                    className="col-6 col-md-3"
-                  >
+                <div className="row justify-content-center ">
+                  <ViewProjet href={href} target="_blank" className="col-lg-3">
                     Voir le projet
                   </ViewProjet>
                   <GetButton
                     href={rdv}
                     target="_blank"
-                    className="col-11 col-md-5 col-lg-7 col-xl-6 col-xxl-5"
+                    className="col-lg-4 col-xl-6 col-xxl-5 offset-lg-1"
                   >
                     Obtenez le votre dès maintenant
                   </GetButton>
@@ -171,7 +125,7 @@ function AchievementsGrid() {
             </GridElements>
           ))}
         </Grid>
-      </div>
+      </Container>
     </React.Fragment>
   )
 }

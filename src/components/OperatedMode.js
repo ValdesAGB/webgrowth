@@ -1,142 +1,176 @@
 import React from 'react'
 import { operatedModeElements } from '../data'
 import styled from 'styled-components'
+import { polices } from '../untils/polices'
+import { colors } from '../untils/colors'
+
+const OperatedSection = styled.div`
+  padding: 5% 0;
+
+  @media (min-width: 576px) {
+    padding-bottom: 10%;
+  }
+
+  @media (min-width: 768px) {
+    padding: 5% 0;
+  }
+`
+
+const Container = styled.div`
+  text-align: center;
+`
+
+const Header = styled.h1`
+  font-family: ${polices.second};
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 5%;
+`
+
+const OperatedDiv = styled.div`
+  @media (max-width: 991px) {
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  background-color: ${colors.OperatedDivBgColor};
+  border-radius: 20px;
+  @media (min-width: 992px) {
+    padding: 5% 2%;
+  }
+`
+
+const OperatedContainer = styled.div`
+  cursor: pointer;
+  @media (min-width: 992px) {
+    padding: ${(props) => props.elem !== '05' && '5%'};
+    border-left: ${(props) =>
+      props.elem === '01' || props.elem === '03' || props.elem === '05'
+        ? 0
+        : 'solid 1px white'};
+
+    border-bottom: ${(props) =>
+      props.elem === '01' || props.elem === '02' ? 'solid 1px white' : 0};
+
+    border-top: ${(props) => (props.elem === '05' ? 'solid 1px white' : 0)};
+    margin-top: ${(props) => props.elem === '05' && '2%'};
+  }
+`
+
+const Operated = styled.div`
+  margin: 30px 0;
+`
+
+const PuceDiv = styled.div`
+  margin-bottom: 5%;
+`
+
+const Puce = styled.div`
+  color: white;
+  font-family: ${polices.main};
+  font-weight: 600;
+  font-size: 35px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+  ${Operated}:hover & {
+    transform: translateY(-15px);
+  }
+  background-color: ${(props) =>
+    props.id === '01' || props.id === '03' || props.id === '05'
+      ? colors.main
+      : colors.second};
+
+  @media (min-width: 992px) {
+    background-color: ${(props) =>
+      props.id === '01' || props.id === '04' || props.id === '05'
+        ? colors.main
+        : colors.second};
+  }
+`
+const Title = styled.h2`
+  font-family: ${polices.second};
+  font-weight: bold;
+  font-size: 24px;
+`
+
+const Paragraph = styled.p`
+  font-family: ${polices.second};
+  font-size: 14px;
+  span {
+    font-weight: bold;
+  }
+`
+
+const VerticalSeparetor = styled.div`
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+`
+
+const VerticalLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  border-right: dashed 2px #121234;
+`
 
 function OperatedMode() {
-  const Header = styled.h1`
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 7% 0 5% 0;
-  `
-
-  const OperatedDiv = styled.div`
-    background-color: #d9d9d9;
-    @media (max-width: 767px) {
-      background-color: transparent;
-    }
-    border-radius: 20px;
-
-    padding: 5% 2% 0 2%;
-  `
-
-  const OperatedContainer = styled.div`
-    cursor: pointer;
-    padding: 5%;
-    @media (min-width: 320px) {
-      border: 0;
-    }
-    padding-top: ${(props) => props.elem === '05' && '5%'};
-    @media (min-width: 768px) {
-      border-left: ${(props) =>
-        props.elem === '01' || props.elem === '03' || props.elem === '05'
-          ? 0
-          : 'solid 1px white'};
-
-      border-bottom: ${(props) =>
-        props.elem === '01' || props.elem === '02' ? 'solid 1px white' : 0};
-
-      border-top: ${(props) => (props.elem === '05' ? 'solid 1px white' : 0)};
-      margin-top: ${(props) => props.elem === '05' && '2%'};
-    }
-  `
-
-  const PuceDiv = styled.div`
-    margin: 0 0 5% 0;
-  `
-
-  const Puce = styled.div`
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 1s;
-    ${OperatedContainer}:hover & {
-      transform: translateY(-20px);
-    }
-    @media (min-width: 320px) {
-      background-color: ${(props) =>
-        props.id === '01' || props.id === '03' || props.id === '05'
-          ? '#121234'
-          : '#FFCE07'};
-    }
-
-    @media (min-width: 728px) {
-      background-color: ${(props) =>
-        props.id === '01' || props.id === '04' || props.id === '05'
-          ? '#121234'
-          : '#FFCE07'};
-    }
-  `
-  const Title = styled.h2`
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    @media (min-width: 320px) {
-      font-size: 19px;
-    }
-    @media (min-width: 320px) {
-      font-size: 24px;
-    }
-  `
-
-  const Paragraph = styled.p`
-    font-family: 'Roboto', sans-serif;
-    font-weight: regular;
-    font-size: 14px;
-  `
-  const VerticalLine = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100px;
-    border-right: dashed 2px #121234;
-  `
   return (
     <React.Fragment>
-      <section>
+      <OperatedSection>
         <div>
-          <div className="container  text-center">
+          <Container className="container">
             <Header>Notre Mode de Fonctionnement</Header>
             <div className="row justify-content-center">
-              <OperatedDiv className="col-lg-8 row justify-content-center">
-                {operatedModeElements.map(({ id, title, paragraph }) => (
-                  <OperatedContainer
-                    key={id}
-                    elem={id}
-                    className={`col-md-${id !== '05' ? '6' : '10'} `}
-                  >
-                    <PuceDiv className="row justify-content-center">
-                      <Puce id={id}>{id}</Puce>
-                    </PuceDiv>
-                    <Title>{title}</Title>
-                    <Paragraph>
-                      {paragraph}{' '}
-                      {id === '01' ? (
-                        <span className="fw-bold">satisfaction totale.</span>
-                      ) : (
-                        id === '05' && <span className="fw-bold">18 mois.</span>
+              <OperatedDiv className="col-lg-8">
+                <div className="row justify-content-center">
+                  {operatedModeElements.map(({ id, title, paragraph }) => (
+                    <OperatedContainer
+                      key={id}
+                      elem={id}
+                      className={`col-12  col-sm-10 col-md-8 col-lg-${
+                        id !== '05' ? '6' : '10'
+                      } `}
+                    >
+                      <Operated>
+                        <PuceDiv className="row justify-content-center">
+                          <Puce id={id}>{id}</Puce>
+                        </PuceDiv>
+                        <Title>{title}</Title>
+                        <Paragraph>
+                          {paragraph}{' '}
+                          {id === '01' ? (
+                            <span>satisfaction totale.</span>
+                          ) : (
+                            id === '05' && <span>18 mois.</span>
+                          )}
+                        </Paragraph>
+                      </Operated>
+                      {id !== '05' && (
+                        <VerticalSeparetor>
+                          <div>
+                            <div className="row justify-content-center">
+                              <div className="col-1 px-5">
+                                <VerticalLine />
+                              </div>
+                            </div>
+                          </div>
+                        </VerticalSeparetor>
                       )}
-                    </Paragraph>
-                    {id !== '05' && (
-                      <div className="row justify-content-center d-md-none">
-                        <div className="col-1">
-                          <VerticalLine />
-                        </div>
-                      </div>
-                    )}
-                  </OperatedContainer>
-                ))}
+                    </OperatedContainer>
+                  ))}
+                </div>
               </OperatedDiv>
             </div>
-          </div>
+          </Container>
         </div>
-      </section>
+      </OperatedSection>
     </React.Fragment>
   )
 }

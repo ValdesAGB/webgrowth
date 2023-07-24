@@ -6,6 +6,8 @@ import carla from '../assets/lastAchiviements/carla.png'
 import lana from '../assets/lastAchiviements/lana.png'
 import legal from '../assets/lastAchiviements/legal.png'
 import rano from '../assets/lastAchiviements/rano.png'
+import safZone from '../assets/lastAchiviements/safZone.png'
+import Ebookyo from '../assets/lastAchiviements/e-bookyo.png'
 import onepage from '../assets/offres cover/offre onepage.png'
 import portfolio from '../assets/offres cover/offre portfolio.png'
 import vitrine from '../assets/offres cover/offre vitrine.png'
@@ -160,6 +162,50 @@ const ranoDescription = () => {
   )
 }
 
+const safzoneDescription = () => {
+  return (
+    <React.Fragment>
+      Le prototype <Important>safZone</Important> est un exemple de site web que
+      nous avons développé pour une agence spécialisée dans le domaine de la
+      protection rapprochée. Ce site est conçu pour présenter de manière
+      professionnelle les services de sécurité haut de gamme offerts par
+      l'agence, et fournir aux visiteurs des informations claires et
+      rassurantes.
+      <br />
+      <br />
+      Doté d'un design captivant et sophistiqué, safzone met en avant son
+      expertise inégalée et sa réputation en matière de protection rapprochée.
+      Dès la page d'accueil, il vous offre un aperçu concis de leur approche
+      unique et des services personnalisés qu'il' propose, tels que la
+      protection de personnalités publiques, l'escorte VIP et les solutions de
+      sécurité sur mesure.
+      <br />
+      <br />
+      Une navigation fluide et intuitive permet aux utilisateurs de trouver
+      rapidement les informations dont ils ont besoin, que ce soit les
+      coordonnées, les profils des agents hautement qualifiés, les services
+      spécifiques offerts ou les témoignages des précédents clients. Il propose
+      également une section dédiée aux ressources, offrant des articles
+      informatifs, des guides pratiques et des conseils de sécurité pour vous
+      aider à mieux comprendre l'importance de la protection rapprochée.
+      <br />
+      <br />
+      Grâce à une mise en page responsive, le prototype safZone s'adapte
+      parfaitement à tous les appareils, offrant une expérience utilisateur
+      optimale, que vous naviguiez sur un ordinateur, une tablette ou un
+      smartphone.
+      <br />
+      <br />
+      Avec le prototype safZone, notre objectif est d'offrir un site web qui
+      inspire confiance et qui met en valeur votre expertise en matière de
+      protection rapprochée. Nous sommes déterminés à renforcer votre visibilité
+      en ligne, à générer de nouvelles opportunités de collaboration et à vous
+      offrir la tranquillité d'esprit que vous méritez lorsque vous recherchez
+      des services de sécurité de première classe.
+    </React.Fragment>
+  )
+}
+
 const lanaDescription = () => {
   return (
     <React.Fragment>
@@ -191,6 +237,46 @@ const lanaDescription = () => {
       navigation intuitive, le site Lana vise à attirer de nouveaux clients et à
       inspirer un véritable sentiment d'émerveillement devant le pouvoir de la
       photographie.
+    </React.Fragment>
+  )
+}
+
+const EbookyoDescription = () => {
+  return (
+    <React.Fragment>
+      Découvrez <Important>E-Bookyo</Important>, une landing page immersive
+      conçue pour présenter un livre exceptionnel. Elle vous offre un aperçu
+      convaincant des succès et des réalisations exceptionnelles de cet ouvrage,
+      ainsi que de l'auteur qui l'a créé.
+      <br />
+      <br />
+      À travers un design élégant et moderne, le prototype E-Bookyo met en avant
+      les moments forts et les réalisations notables du livre, ainsi que les
+      critiques élogieuses d'autres lecteurs satisfaits. Vous découvrirez
+      comment cette œuvre a touché et inspiré un large public, et comment elle a
+      connu un succès retentissant dans le domaine littéraire.
+      <br />
+      <br />
+      La landing page E-Bookyo met également en lumière l'auteur talentueux et
+      visionnaire derrière le livre. Vous en apprendrez davantage sur son
+      parcours, sa passion et son expertise dans le domaine qui a conduit à la
+      création de cette œuvre exceptionnelle. Des témoignages et des récompenses
+      reconnues viennent attester de son talent et de son impact significatif
+      dans le monde littéraire.
+      <br />
+      <br />
+      Des boutons d'appel à l'action stratégiquement placés vous permettent
+      d'acheter et de télécharger le livre, vous offrant ainsi l'opportunité de
+      vous immerger dans son contenu inspirant. Que vous préfériez le lire sur
+      votre liseuse, votre tablette ou votre smartphone, l'expérience
+      utilisateur fluide et intuitive garantit une lecture optimale.
+      <br />
+      <br />
+      Avec le prototype E-Bookyo, notre objectif est de vous présenter un livre
+      exceptionnel et de vous faire découvrir les réussites impressionnantes
+      qu'il a accumulées. Nous souhaitons également vous permettre de vous
+      connecter avec l'auteur, de comprendre son parcours et de vous inspirer de
+      son travail.
     </React.Fragment>
   )
 }
@@ -252,6 +338,13 @@ export const archivementsElements = [
   },
 
   {
+    id: 'safzone',
+    cover: safZone,
+    description: safzoneDescription(),
+    href: 'https://safzon.valdesagbokoni.com/',
+  },
+
+  {
     id: 'lana',
     cover: lana,
     description: lanaDescription(),
@@ -263,6 +356,12 @@ export const archivementsElements = [
     cover: carla,
     description: carlaDescription(),
     href: 'https://carlatown.valdesagbokoni.com/',
+  },
+  {
+    id: 'e-bookyo',
+    cover: Ebookyo,
+    description: EbookyoDescription(),
+    href: 'https://e-bookyo.valdesagbokoni.com/',
   },
 ]
 
@@ -285,7 +384,7 @@ export const operatedModeElements = [
     id: '03',
     title: 'Construction et developpement',
     paragraph:
-      'Notre équipe d’experts intervenant dans votre projet, se mettront à l’ouvrage afin d’en faire ressortir le meilleur dans le respect de vos recommandations et en restant axés sur votre vision.',
+      'Notre équipe d’experts intervenant dans votre projet, se mettra à l’ouvrage afin d’en faire ressortir le meilleur dans le respect de vos recommandations et en restant axés sur votre vision.',
   },
 
   {
@@ -454,29 +553,29 @@ export const offresElements = [
     text: siteVitrine(),
   },
 
-  {
+  /*{
     id: 'commerce',
     offre: 'Site E-commerce',
     cover: commerce,
     right: false,
     text: eCommerce(),
-  },
+  },*/
 
   {
     id: 'portfolio',
     offre: 'Portfolio',
     cover: portfolio,
-    right: true,
+    right: false,
     text: portfolioService(),
   },
 
-  {
+  /* {
     id: 'api',
     offre: 'Application backend / API Restful',
     cover: commerce,
     right: false,
     text: apiBackend(),
-  },
+  },*/
 ]
 
 export const reviewsElements = [
@@ -502,7 +601,7 @@ export const reviewsElements = [
     id: '3',
     review:
       "Je suis ravi de recommander l'agence Web Growth pour leur excellente prestation en matière de création de sites web. Avec une équipe de professionnels créatifs et techniques, l'agence a pu comprendre nos besoins et nous proposer une solution personnalisée pour améliorer la présence en ligne de notre entreprise. La communication était claire et transparente tout au long du processus de conception et de développement, ce qui nous a permis de voir notre site web prendre vie de manière rapide et efficace. Nous sommes très heureux du résultat final et recommanderons certainement Web Growth pour leur expertise et leur service de qualité supérieure dans ce domaine.",
-    name: 'Hanane ADOGONI',
+    name: 'Hanane ADOGONY',
     fonction: 'CEO SOCIALFAH',
     cover: socialfath,
   },
@@ -761,7 +860,7 @@ export const footerElements = [
     title: 'LinkedIn:',
     icone: 'bi-linkedin',
     data: 'https://www.linkedin.com/company/webgrowth-agency/',
-    user: '@WebGrowth',
+    user: 'WebGrowth',
   },
 
   {

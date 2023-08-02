@@ -13,11 +13,11 @@ const InterfaceDiv = styled.div`
     left: 90%;
   }
   @media (min-width: 992px) {
-    top: 14%;
+    top: 10%;
   }
 
   @media (min-width: 1200px) {
-    top: 5%;
+    top: 8%;
     left: 85%;
   }
 

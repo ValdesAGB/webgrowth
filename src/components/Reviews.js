@@ -65,8 +65,25 @@ const Header = styled.h1`
   }
 `
 
+const SliderComponent = styled(Slider)`
+  &:active {
+    border: none;
+  }
+
+  &:focus: {
+    border: none;
+  }
+`
+
 const ReviewContainer = styled.div`
   padding: 0 5%;
+  &:active {
+    border: none;
+  }
+
+  &:focus: {
+    border: none;
+  }
 `
 const ReviewContent = styled.div`
   background-color: ${colors.second};
@@ -80,6 +97,11 @@ const ReviewContent = styled.div`
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
+    border: none;
+  }
+
+  &:focus: {
+    border: none;
   }
 
   .row {
@@ -178,7 +200,7 @@ function Reviews() {
         <div className="container">
           <Header>Ils nous ont fait confiance...</Header>
 
-          <Slider {...settings}>
+          <SliderComponent {...settings}>
             {reviewsElements.map(({ id, review, name, fonction, cover }) => (
               <ReviewContainer key={id}>
                 <ReviewContent>
@@ -195,7 +217,7 @@ function Reviews() {
                 </ReviewContent>
               </ReviewContainer>
             ))}
-          </Slider>
+          </SliderComponent>
         </div>
       </ReviewSection>
     </React.Fragment>

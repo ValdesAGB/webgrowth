@@ -97,7 +97,7 @@ const ButtonDiv = styled.div`
 function Welcome() {
   return (
     <React.Fragment>
-      <WelcomeSection>
+      <WelcomeSection id="#">
         <Container className="container">
           <div className="row justify-content-center">
             <div className="col-md-7">

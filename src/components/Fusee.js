@@ -31,6 +31,12 @@ const FuseeDivContainer = styled.div`
     height: 120px;
   }
 
+  @media (min-width: 1400px) {
+    top: 6%;
+    width: 140px;
+    height: 140px;
+  }
+
   @media (min-width: 1600px) {
     left: 5%;
   }
